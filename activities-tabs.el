@@ -3,8 +3,6 @@
 ;; Copyright (C) 2024  Free Software Foundation, Inc.
 
 ;; Author: Adam Porter <adam@alphapapa.net>
-;; Keywords: convenience
-;; Package-Requires: ((emacs "29.1"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -76,13 +74,21 @@ accordingly."
           (advice-add #'activities-resume :before #'activities-tabs-before-resume)
           (pcase-dolist (`(,symbol . ,function) override-map)
             (advice-add symbol :override function))
-          (setf activities-tabs-tab-bar-tab-face-function-original tab-bar-tab-face-function
-                tab-bar-tab-face-function #'activities-tabs--tab-bar-tab-face-function))
+          ;; The mode command could be called to activate the mode
+          ;; when it already is, in which case we must not swap the
+          ;; tab-face-function again, which would discard the actual,
+          ;; original value.  (IOW, this must be idempotent.)
+          ;; TODO: A way to prevent modes' body forms from being
+          ;; reevaluated when they are already active.
+          (unless activities-tabs-tab-bar-tab-face-function-original
+            (setf activities-tabs-tab-bar-tab-face-function-original tab-bar-tab-face-function
+                  tab-bar-tab-face-function #'activities-tabs--tab-bar-tab-face-function)))
       (advice-remove #'activities-resume #'activities-tabs-before-resume)
       (pcase-dolist (`(,symbol . ,function) override-map)
         (advice-remove symbol function))
-      (setf tab-bar-tab-face-function activities-tabs-tab-bar-tab-face-function-original
-            activities-tabs-tab-bar-tab-face-function-original nil))))
+      (when activities-tabs-tab-bar-tab-face-function-original
+        (setf tab-bar-tab-face-function activities-tabs-tab-bar-tab-face-function-original
+              activities-tabs-tab-bar-tab-face-function-original nil)))))
 
 ;;;; Functions
 
