@@ -271,6 +271,16 @@ prefixes will be added automatically."
                  (const :tag "Current project's name" activities--project-name)
                  (function-item :tag "Other function")))
 
+(defcustom activities-anti-save-predicates
+  '(active-minibuffer-window activities--backtrace-visible-p)
+  "Predicates which prevent an activity's state from being saved.
+Each predicate is called without arguments, with the activity to
+be saved having been activated.  If any predicate returns
+non-nil, the activity's state is not saved."
+  :type '(set (function-item active-minibuffer-window)
+              (function-item activities--backtrace-visible-p)
+              (function :tag "Other predicate")))
+
 ;;;; Commands
 
 ;;;###autoload
@@ -322,8 +332,11 @@ Its last is saved, and its frames, windows, and tabs are closed."
   (interactive
    (let ((default (when (activities-current)
                     (activities-activity-name (activities-current)))))
-     (list (activities-completing-read :prompt (format-prompt "Suspend activity" default)
-                                       :default default))))
+     (list (activities-completing-read
+            :activities (cl-remove-if-not #'activities-activity-active-p
+                                          activities-activities :key #'cdr)
+            :prompt (format-prompt "Suspend activity" default)
+            :default default))))
   (activities-save activity :lastp t)
   (activities-close activity))
 
@@ -407,7 +420,7 @@ according to option `activities-always-persist', which see)."
   (activities-with activity
     ;; Don't try to save if a minibuffer is active, because we
     ;; wouldn't want to try to restore that layout.
-    (unless (active-minibuffer-window)
+    (unless (run-hook-with-args-until-success 'activities-anti-save-predicates)
       (pcase-let* (((cl-struct activities-activity name default last) activity)
                    (new-state (activities-state)))
         (setf (activities-activity-default activity) (if (or defaultp (not default)) new-state default)
@@ -667,6 +680,14 @@ PROMPT and DEFAULT are passed to `completing-read', which see."
   "Return frame/tab name for ACTIVITY.
 Adds `activities-name-prefix'."
   (concat activities-name-prefix (activities-activity-name activity)))
+
+(defun activities--backtrace-visible-p ()
+  "Return non-nil if a visible window is in `backtrace-mode'."
+  (catch :found
+    (walk-windows (lambda (window)
+                    (with-selected-window window
+                      (when (derived-mode-p 'backtrace-mode)
+                        (throw :found t)))))))
 
 ;;;; Project support
 
