@@ -314,7 +314,9 @@ activity."
 If RESETP (interactively, with universal prefix), reset to
 ACTIVITY's default state; otherwise, resume its last state, if
 available."
-  (interactive (list (activities-completing-read) :resetp current-prefix-arg))
+  (interactive
+   (list (activities-completing-read :prompt "Resume activity" :default nil)
+         :resetp current-prefix-arg))
   (let ((already-active-p (activities-activity-active-p activity)))
     (activities--switch activity)
     (unless (or resetp already-active-p)
@@ -326,24 +328,32 @@ Interactively, offers active activities."
   (interactive
    (list (activities-completing-read
           :activities (cl-remove-if-not #'activities-activity-active-p activities-activities :key #'cdr)
-          :prompt "Switch to: ")))
+          :prompt "Switch to activity")))
   (activities--switch activity))
 
 (defun activities-suspend (activity)
   "Suspend ACTIVITY.
-Its last is saved, and its frames, windows, and tabs are closed."
+Its last state is saved, and its frames, windows, and tabs are closed."
   (interactive
-   (let ((default (when (activities-current)
-                    (activities-activity-name (activities-current)))))
-     (list (activities-completing-read
-            :activities (cl-remove-if-not #'activities-activity-active-p
-                                          activities-activities :key #'cdr)
-            :prompt (format-prompt "Suspend activity" default)
-            :default default))))
+   (list (activities-completing-read
+          :activities (cl-remove-if-not #'activities-activity-active-p
+                                        activities-activities :key #'cdr)
+          :prompt "Suspend activity")))
   (activities-save activity :lastp t)
   (activities-close activity))
 
-(defalias 'activities-kill #'activities-suspend)
+(defun activities-kill (activity)
+  "Kill ACTIVITY.
+Its last state is discarded (so when it is resumed, its default
+state will be used), and close its frame or tab."
+  (interactive
+   (list (activities-completing-read
+          :activities (cl-remove-if-not #'activities-activity-active-p
+                                        activities-activities :key #'cdr)
+          :prompt "Kill activity")))
+  (setf (activities-activity-last activity) nil)
+  (activities-save activity)
+  (activities-close activity))
 
 (defun activities-save-all ()
   "Save all active activities' last states.
@@ -366,10 +376,7 @@ In order to be safe for `kill-emacs-hook', this demotes errors."
 It will not be recoverable."
   ;; TODO: Discard relevant bookmarks when `activities-bookmark-store' is enabled.
   (interactive
-   (let ((default (when (activities-current)
-                    (activities-activity-name (activities-current)))))
-     (list (activities-completing-read :prompt (format-prompt "Discard activity" default)
-                                       :default default))))
+   (list (activities-completing-read :prompt "Discard activity")))
   (ignore-errors
     ;; FIXME: After fixing all the bugs, remove ignore-errors.
     (activities-close activity))
@@ -419,17 +426,16 @@ To be called from `kill-emacs-hook'."
 If DEFAULTP, save its default state; if LASTP, its last.  If
 PERSISTP, force persisting of data (otherwise, data is persisted
 according to option `activities-always-persist', which see)."
-  (unless (or defaultp lastp)
-    (user-error "Neither DEFAULTP nor LASTP specified"))
   (activities-with activity
-    ;; Don't try to save if a minibuffer is active, because we
-    ;; wouldn't want to try to restore that layout.
-    (unless (run-hook-with-args-until-success 'activities-anti-save-predicates)
-      (pcase-let* (((cl-struct activities-activity name default last) activity)
-                   (new-state (activities-state)))
-        (setf (activities-activity-default activity) (if (or defaultp (not default)) new-state default)
-              (activities-activity-last activity) (if (or lastp (not last)) new-state last)
-              (map-elt activities-activities name) activity))))
+    (when (or defaultp lastp)
+      (unless (run-hook-with-args-until-success 'activities-anti-save-predicates)
+        (pcase-let* (((cl-struct activities-activity default last) activity)
+                     (new-state (activities-state)))
+          (setf (activities-activity-default activity) (if (or defaultp (not default)) new-state default)
+                (activities-activity-last activity) (if (or lastp (not last)) new-state last)))))
+    ;; Always set the value so, e.g. the activity can be modified
+    ;; externally and saved here.
+    (setf (map-elt activities-activities (activities-activity-name activity)) activity))
   (activities--persist persistp))
 
 (cl-defun activities-set (activity &key (state 'last))
@@ -703,10 +709,15 @@ activity's name is NAME."
           (current-buffer)))))
 
 (cl-defun activities-completing-read
-    (&key (activities activities-activities) (prompt "Open activity: ") default)
+    (&key (activities activities-activities)
+          (default (when (activities-current)
+                     (activities-activity-name (activities-current))))
+          (prompt "Activity"))
   "Return an activity read with completion from ACTIVITIES.
-PROMPT and DEFAULT are passed to `completing-read', which see."
-  (let* ((names (activities-names activities))
+PROMPT is passed to `completing-read' by way of `format-prompt',
+which see, with DEFAULT."
+  (let* ((prompt (format-prompt prompt default))
+         (names (activities-names activities))
          (name (completing-read prompt names nil t nil 'activities-completing-read-history default)))
     (or (map-elt activities-activities name)
         (make-activities-activity :name name))))
