@@ -6,7 +6,7 @@
 ;; Maintainer: Adam Porter <adam@alphapapa.net>
 ;; URL: https://github.com/alphapapa/activities.el
 ;; Keywords: convenience
-;; Version: 0.5-pre
+;; Version: 0.6-pre
 ;; Package-Requires: ((emacs "29.1") (persist "0.6"))
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -284,6 +284,23 @@ non-nil, the activity's state is not saved."
               (function-item activities--backtrace-visible-p)
               (function :tag "Other predicate")))
 
+(defcustom activities-resume-into-frame 'current
+  "Which frame to resume an activity into.
+Only applies when `activities-tabs-mode' is disabled."
+  :type '(choice (const :tag "Current frame"
+                        :doc "Replace current frame's window configuration"
+                        current)
+                 (const :tag "New frame" :doc "Make a new frame" new)))
+
+(defcustom activities-bookmark-warnings nil
+  "Warn when a buffer can't be bookmarked.
+This is expected to be the case for non-file-visiting buffers
+whose major mode does not provide bookmark support, for which no
+warning is necessary.  This option may be enabled for debugging,
+which will cause a message to be printed for such buffers when an
+activity's state is saved."
+  :type 'boolean)
+
 ;;;; Commands
 
 ;;;###autoload
@@ -377,10 +394,12 @@ It will not be recoverable."
   ;; TODO: Discard relevant bookmarks when `activities-bookmark-store' is enabled.
   (interactive
    (list (activities-completing-read :prompt "Discard activity")))
-  (ignore-errors
-    ;; FIXME: After fixing all the bugs, remove ignore-errors.
-    (activities-close activity))
-  (setf activities-activities (map-delete activities-activities (activities-activity-name activity))))
+  (when (yes-or-no-p (format "Discard activity %S permanently?" (activities-activity-name activity)))
+    (ignore-errors
+      ;; FIXME: After fixing all the bugs, remove ignore-errors.
+      (when (activities-activity-active-p activity)
+        (activities-close activity)))
+    (setf activities-activities (map-delete activities-activities (activities-activity-name activity)))))
 
 ;;;; Activity mode
 
@@ -481,8 +500,11 @@ closed."
   "Switch to ACTIVITY.
 Select's ACTIVITY's frame, making a new one if needed.  Its state
 is not changed."
-  (select-frame (or (activities--frame activity)
-                    (make-frame `((activity . ,activity)))))
+  (if (activities-activity-active-p activity)
+      (select-frame (activities--frame activity))
+    (pcase activities-resume-into-frame
+      ('current nil)
+      ('new (select-frame (make-frame `((activity . ,activity)))))))
   (unless activities-saving-p
     ;; HACK: Don't raise the frame when saving the activity's state.
     ;; (I don't love this solution, largely because it only applies
@@ -609,12 +631,13 @@ activity's name is NAME."
   "Return `activities-buffer' struct for BUFFER."
   (with-current-buffer buffer
     (make-activities-buffer
-     :bookmark (condition-case-unless-debug err
+     :bookmark (condition-case err
                    (bookmark-make-record)
                  (error
                   (pcase (error-message-string err)
                     ("Buffer not visiting a file or directory")
-                    (_ (message (format "Activities: Error while making bookmark for buffer %S: %%S" buffer) err)))
+                    (_ (when activities-bookmark-warnings
+                         (message (format "Activities: Error while making bookmark for buffer %S: %%S" buffer) err))))
                   nil))
      :filename (buffer-file-name buffer)
      :name (buffer-name buffer)

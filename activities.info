@@ -70,7 +70,9 @@ Usage
 
 Changelog
 
-* v0.5-pre: v05-pre.
+* v0.6-pre: v06-pre.
+* v0.5.1: v051.
+* v0.5: v05.
 * v0.4: v04.
 * v0.3.3: v033.
 * v0.3.2: v032.
@@ -377,7 +379,9 @@ File: README.info,  Node: Changelog,  Next: Development,  Prev: FAQ,  Up: Top
 
 * Menu:
 
-* v0.5-pre: v05-pre.
+* v0.6-pre: v06-pre.
+* v0.5.1: v051.
+* v0.5: v05.
 * v0.4: v04.
 * v0.3.3: v033.
 * v0.3.2: v032.
@@ -390,14 +394,40 @@ File: README.info,  Node: Changelog,  Next: Development,  Prev: FAQ,  Up: Top
 * v0.1: v01.
 
 
-File: README.info,  Node: v05-pre,  Next: v04,  Up: Changelog
+File: README.info,  Node: v06-pre,  Next: v051,  Up: Changelog
 
-5.1 v0.5-pre
+5.1 v0.6-pre
 ============
+
+*Changes*
+   • Default time format in activities list.
+
+
+File: README.info,  Node: v051,  Next: v05,  Prev: v06-pre,  Up: Changelog
+
+5.2 v0.5.1
+==========
+
+*Fixes*
+   • Listing activities without last-saved states.
+
+
+File: README.info,  Node: v05,  Next: v04,  Prev: v051,  Up: Changelog
+
+5.3 v0.5
+========
 
 *Additions*
    • Suggest setting variable ‘edebug-inhibit-emacs-lisp-mode-bindings’
      to avoid conflicts with suggested keybindings.
+   • Option ‘activities-bookmark-warnings’ enables warning messages when
+     a non-file-visiting buffer can’t be bookmarked (for debugging
+     purposes).
+   • Option ‘activities-resume-into-frame’ controls whether resuming an
+     activity opens a new frame or uses the current one (when
+     ‘activities-tabs-mode’ is disabled).  (#22
+     (https://github.com/alphapapa/activities.el/issues/22).  Thanks to
+     Icy-Thought (https://github.com/Icy-Thought) for suggesting.)
 
    *Changes*
    • Command ‘activities-kill’ now discards an activity’s last state
@@ -414,11 +444,18 @@ File: README.info,  Node: v05-pre,  Next: v04,  Up: Changelog
      (https://github.com/alphapapa/activities.el/issues/17).  Thanks to
      JD Smith (https://github.com/jdtsmith) for reporting.)
    • Sort order in ‘activities-list’.
+   • When discarding an inactive activity, don’t switch to it first.
+     (#18 (https://github.com/alphapapa/activity.el/issues/18).  Thanks
+     to JD Smith (https://github.com/jdtsmith) for reporting.)
+   • Don’t signal an error when ‘debug-on-error’ is enabled and a buffer
+     is not visiting a file.  (#25
+     (https://github.com/alphapapa/activity.el/issues/25).  Thanks to
+     Karthik Chikmagalur (https://github.com/karthink) for reporting.)
 
 
-File: README.info,  Node: v04,  Next: v033,  Prev: v05-pre,  Up: Changelog
+File: README.info,  Node: v04,  Next: v033,  Prev: v05,  Up: Changelog
 
-5.2 v0.4
+5.4 v0.4
 ========
 
 *Additions*
@@ -435,7 +472,7 @@ File: README.info,  Node: v04,  Next: v033,  Prev: v05-pre,  Up: Changelog
 
 File: README.info,  Node: v033,  Next: v032,  Prev: v04,  Up: Changelog
 
-5.3 v0.3.3
+5.5 v0.3.3
 ==========
 
 *Fixes*
@@ -449,7 +486,7 @@ File: README.info,  Node: v033,  Next: v032,  Prev: v04,  Up: Changelog
 
 File: README.info,  Node: v032,  Next: v031,  Prev: v033,  Up: Changelog
 
-5.4 v0.3.2
+5.6 v0.3.2
 ==========
 
 Updated documentation, etc.
@@ -457,7 +494,7 @@ Updated documentation, etc.
 
 File: README.info,  Node: v031,  Next: v03,  Prev: v032,  Up: Changelog
 
-5.5 v0.3.1
+5.7 v0.3.1
 ==========
 
 *Fixes*
@@ -469,7 +506,7 @@ File: README.info,  Node: v031,  Next: v03,  Prev: v032,  Up: Changelog
 
 File: README.info,  Node: v03,  Next: v02,  Prev: v031,  Up: Changelog
 
-5.6 v0.3
+5.8 v0.3
 ========
 
 *Additions*
@@ -482,7 +519,7 @@ File: README.info,  Node: v03,  Next: v02,  Prev: v031,  Up: Changelog
 
 File: README.info,  Node: v02,  Next: v013,  Prev: v03,  Up: Changelog
 
-5.7 v0.2
+5.9 v0.2
 ========
 
 *Additions*
@@ -498,8 +535,8 @@ File: README.info,  Node: v02,  Next: v013,  Prev: v03,  Up: Changelog
 
 File: README.info,  Node: v013,  Next: v012,  Prev: v02,  Up: Changelog
 
-5.8 v0.1.3
-==========
+5.10 v0.1.3
+===========
 
 *Fixes*
    • Autoloads.
@@ -508,8 +545,8 @@ File: README.info,  Node: v013,  Next: v012,  Prev: v02,  Up: Changelog
 
 File: README.info,  Node: v012,  Next: v011,  Prev: v013,  Up: Changelog
 
-5.9 v0.1.2
-==========
+5.11 v0.1.2
+===========
 
 *Fixes*
    • Some single-window configurations were not restored properly.
@@ -517,7 +554,7 @@ File: README.info,  Node: v012,  Next: v011,  Prev: v013,  Up: Changelog
 
 File: README.info,  Node: v011,  Next: v01,  Prev: v012,  Up: Changelog
 
-5.10 v0.1.1
+5.12 v0.1.1
 ===========
 
 *Fixes*
@@ -526,7 +563,7 @@ File: README.info,  Node: v011,  Next: v01,  Prev: v012,  Up: Changelog
 
 File: README.info,  Node: v01,  Prev: v011,  Up: Changelog
 
-5.11 v0.1
+5.13 v0.1
 =========
 
 Initial release.
@@ -563,33 +600,35 @@ to request the assignment form.
 
 Tag Table:
 Node: Top231
-Node: Installation2471
-Node: GNU ELPA2622
-Node: Quelpa2987
-Node: Configuration3707
-Node: Usage4663
-Node: Activities4865
-Node: Compatibility5853
-Node: Modes6337
-Node: Workflow7005
-Node: Bindings7958
-Node: Commands8604
-Node: Bookmarks10053
-Node: FAQ10405
-Node: Changelog13481
-Node: v05-pre13766
-Node: v0414782
-Node: v03315327
-Node: v03215757
-Node: v03115885
-Node: v0316215
-Node: v0216605
-Node: v01317097
-Node: v01217246
-Node: v01117423
-Node: v0117588
-Node: Development17689
-Node: Copyright assignment17961
+Node: Installation2500
+Node: GNU ELPA2651
+Node: Quelpa3016
+Node: Configuration3736
+Node: Usage4692
+Node: Activities4894
+Node: Compatibility5882
+Node: Modes6366
+Node: Workflow7034
+Node: Bindings7987
+Node: Commands8633
+Node: Bookmarks10082
+Node: FAQ10434
+Node: Changelog13510
+Node: v06-pre13824
+Node: v05113975
+Node: v0514138
+Node: v0416115
+Node: v03316656
+Node: v03217086
+Node: v03117214
+Node: v0317544
+Node: v0217934
+Node: v01318426
+Node: v01218577
+Node: v01118756
+Node: v0118921
+Node: Development19022
+Node: Copyright assignment19294
 
 End Tag Table
 
