@@ -432,6 +432,7 @@ this demotes errors."
   (interactive (list (activities-current)))
   (unless activity
     (user-error "No active activity"))
+  ;; TODO: Consider resetting the activity's buffers list.
   (activities-set activity :state 'default))
 
 (defun activities-discard (activity)
@@ -834,6 +835,17 @@ That is, if its name starts with an asterisk."
   "Return non-nil if BUFFER is hidden.
 That is, if its name starts with a space."
   (string-prefix-p " " (buffer-name buffer)))
+
+(defun activities-switch-buffer (_activity)
+  "Switch to a buffer associated with ACTIVITY.
+Interactively, select from buffers associated with ACTIVITY; or,
+with prefix argument, choose another activity."
+  (interactive
+   (list (if current-prefix-arg
+             (activities-completing-read)
+           (or (activities-current) (activities-completing-read)))))
+  (unless (defvar activities-tabs-mode)
+    (error "`activities-switch-buffer' currently requires `activities-tabs-mode'")))
 
 ;;;; Project support
 

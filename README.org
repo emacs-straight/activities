@@ -66,6 +66,7 @@ This is the recommended configuration, in terms of a ~use-package~ form to be pl
      ("C-x C-a C-k" . activities-kill)
      ;; This binding mirrors, e.g. "C-x t RET".
      ("C-x C-a RET" . activities-switch)
+     ("C-x C-a b" . activities-switch-buffer)
      ("C-x C-a g" . activities-revert)
      ("C-x C-a l" . activities-list)))
 #+END_SRC
@@ -117,6 +118,7 @@ Key bindings are, as always, ultimately up to the user.  However, in [[Configura
 + ~activities-resume~ (~C-x C-a C-a~) :: Resume an activity, switching to a new frame or tab for its window configuration, and restoring its buffers.  With prefix argument, restore its default state rather than its last.
 + ~activities-revert~ (~C-x C-a g~) :: Revert an activity to its default state.
 + ~activities-switch~ (~C-x C-a RET~) :: Switch to an already-active activity.
++ ~activities-switch-buffer~ (~C-x C-a b~) :: Switch to a buffer associated with the current activity (or, with prefix argument, another activity).
 + ~activities-rename~ :: Rename an activity.
 + ~activities-discard~ :: Discard an activity permanently.
 + ~activities-save-all~ :: Save all active activities' states.  (~activities-mode~ does this automatically, so this command should rarely be needed.)
@@ -129,7 +131,7 @@ When option ~activities-bookmark-store~ is enabled, an Emacs bookmark is stored 
 
 + How is this different from [[https://github.com/alphapapa/burly.el][Burly.el]] or [[https://github.com/alphapapa/bufler.el/][Bufler.el]]? :: Burly is a well-polished tool for restoring window and frame configurations, which could be considered an incubator for some of the ideas furthered here.  Bufler's ~bufler-workspace~ library uses Burly to provide some similar functionality, which is at an exploratory stage.  ~activities~ hopes to provide a longer-term solution more suitable for integration into Emacs.
 
-+ How does this differ from "workspace" packages? :: Yes, there are many Emacs packages that provide "workspace"-like features in one way or another.  To date, only Burly and Bufler seem to offer the ability to restore one across Emacs sessions.  As mentioned, ~activities~ is intended to be more refined and easier to use (e.g. automatically saving activities' states when ~activities-mode~ is enabled).  Comparisons to other packages are left to the reader; suffice to say that ~activities~ is intended to provide what other tools haven't, in an idiomatic, intuitive way.  (Feedback is welcome.)
++ How does this differ from "workspace" packages? :: Yes, there are many Emacs packages that provide "workspace"-like features in one way or another.  To date, only Burly and Bufler seem to offer the ability to restore one across Emacs sessions, including non-file-backed buffers.  As mentioned, ~activities~ is intended to be more refined and easier to use (e.g. automatically saving activities' states when ~activities-mode~ is enabled).  Comparisons to other packages are left to the reader; suffice to say that ~activities~ is intended to provide what other tools haven't, in an idiomatic, intuitive way.  (Feedback is welcome.)
 
 + How does this differ from the built-in ~desktop-mode~? :: As best this author can tell, ~desktop-mode~ saves and restores one set of buffers, with various options to control its behavior.  It does not use ~bookmark~ internally, which prevents it from restoring non-file-backed buffers.  As well, it is not intended to be used on-demand to switch between sets of buffers, windows, or frames (i.e. "activities").
 
@@ -144,6 +146,7 @@ When option ~activities-bookmark-store~ is enabled, an Emacs bookmark is stored 
 ** v0.6-pre
 
 *Additions*
++ Command ~activities-switch-buffer~ switches to a buffer associated with the current activity (or, with prefix argument, another activity).  (A buffer is considered to be associated with an activity if it has been displayed in its tab.  Note that this feature currently requires ~activities-tabs-mode~.)
 + Command ~activities-rename~ renames an activity.
 + Option ~activities-after-switch-functions~, a hook called after switching to an activity.
 + Option ~activities-set-frame-name~ sets the frame name after switching to an activity.  ([[https://github.com/alphapapa/activities.el/issues/33][#33]].  Thanks to [[https://github.com/jdtsmith][JD Smith]].)
