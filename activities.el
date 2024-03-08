@@ -6,7 +6,7 @@
 ;; Maintainer: Adam Porter <adam@alphapapa.net>
 ;; URL: https://github.com/alphapapa/activities.el
 ;; Keywords: convenience
-;; Version: 0.6
+;; Version: 0.7-pre
 ;; Package-Requires: ((emacs "29.1") (persist "0.6"))
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -331,9 +331,9 @@ frame/tab."
 ;;;; Commands
 
 ;;;###autoload
-(cl-defun activities-new (name &key forcep)
-  "Save current state as a new activity with NAME.
-If FORCEP (interactively, with prefix), overwrite existing
+(cl-defun activities-define (name &key forcep)
+  "Define current state as a new activity with NAME.
+If FORCEP (interactively, with prefix), redefine existing
 activity."
   (interactive
    (let* ((current-activity-name
@@ -351,6 +351,18 @@ activity."
       (activities-bookmark-store activity))
     (activities--switch activity)
     activity))
+
+;;;###autoload
+(defun activities-new (name)
+  "Switch to a newly defined activity named NAME."
+  (interactive
+   (list (read-string "New activity name: ")))
+  (when (member name (activities-names))
+    (user-error "Activity named %S already exists" name))
+  (let ((activity (make-activities-activity :name name)))
+    (activities-switch activity)
+    (activities-set activity :state nil)
+    (activities-save activity :defaultp t)))
 
 (defun activities-rename (activity name)
   "Rename ACTIVITY to NAME."
@@ -538,7 +550,10 @@ closed."
   (activities--switch activity)
   (activities--kill-buffers)
   ;; TODO: Set frame parameter when resuming.
-  (delete-frame))
+  (let ((deleting-frame (selected-frame)))
+    (when (= 1 (length (frame-list)))
+      (select-frame (make-frame)))
+    (delete-frame deleting-frame)))
 
 (defun activities-named (name)
   "Return activity having NAME."

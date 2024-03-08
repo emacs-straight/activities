@@ -79,6 +79,7 @@ Usage
 
 Changelog
 
+* v0.7-pre: v07-pre.
 * v0.6: v06.
 * v0.5.1: v051.
 * v0.5: v05.
@@ -159,12 +160,10 @@ to be placed in the user’s init file:
 
        :bind
        (("C-x C-a C-n" . activities-new)
-        ;; As resuming is expected to be one of the most commonly used
-        ;; commands, this binding is one of the easiest to press.
+        ("C-x C-a C-d" . activities-define)
         ("C-x C-a C-a" . activities-resume)
         ("C-x C-a C-s" . activities-suspend)
         ("C-x C-a C-k" . activities-kill)
-        ;; This binding mirrors, e.g. "C-x t RET".
         ("C-x C-a RET" . activities-switch)
         ("C-x C-a b" . activities-switch-buffer)
         ("C-x C-a g" . activities-revert)
@@ -275,10 +274,10 @@ philosophy behind them:
 
    • A binding ending in a ‘C’-prefixed key is expected to result in the
      set of active activities being changed (e.g.  defining a new
-     activity, activating one, or deactivating one).
-   • A binding not ending in a ‘C’-prefixed key is expected to merely
-     change an active one (e.g.  reverting it) or do something else
-     (like listing activities.)
+     activity, switching to one, or suspending one).
+   • A binding not ending in a ‘C’-prefixed key is expected to modify an
+     activity (e.g.  reverting it) or do something else (like listing
+     activities.)
 
 
 File: README.info,  Node: Commands,  Next: Bookmarks,  Prev: Bindings,  Up: Usage
@@ -286,12 +285,17 @@ File: README.info,  Node: Commands,  Next: Bookmarks,  Prev: Bindings,  Up: Usag
 3.6 Commands
 ============
 
+_With the recommended bindings:_
+
 ‘activities-list’ (‘C-x C-a l’)
      List activities in a ‘vtable’ buffer in which they can be managed
      with various commands.
 ‘activities-new’ (‘C-x C-a C-n’)
+     Switch to a new, empty activity (i.e.  one showing a new
+     frame/tab).
+‘activities-define’ (‘C-x C-a C-d’)
      Define a new activity whose default state is the current frame’s or
-     tab’s window configuration.  With prefix argument, overwrite an
+     tab’s window configuration.  With prefix argument, redefine an
      existing activity (thereby updating its default state to the
      current state).
 ‘activities-suspend’ (‘C-x C-a C-s’)
@@ -394,6 +398,7 @@ File: README.info,  Node: Changelog,  Next: Development,  Prev: FAQ,  Up: Top
 
 * Menu:
 
+* v0.7-pre: v07-pre.
 * v0.6: v06.
 * v0.5.1: v051.
 * v0.5: v05.
@@ -409,9 +414,27 @@ File: README.info,  Node: Changelog,  Next: Development,  Prev: FAQ,  Up: Top
 * v0.1: v01.
 
 
-File: README.info,  Node: v06,  Next: v051,  Up: Changelog
+File: README.info,  Node: v07-pre,  Next: v06,  Up: Changelog
 
-5.1 v0.6
+5.1 v0.7-pre
+============
+
+*Additions*
+   • Command ‘activities-new’ switches to a new, "empty" activity.  (See
+     #46 (https://github.com/alphapapa/activities.el/issues/46).)
+
+   *Changes*
+   • Command ‘activities-new’ renamed to ‘activities-define’, with new
+     binding ‘C-x C-a C-d’.  (See #46
+     (https://github.com/alphapapa/activities.el/issues/46).)
+
+   *Fixes*
+   • Suspending/killing an activity when only one frame/tab is open.
+
+
+File: README.info,  Node: v06,  Next: v051,  Prev: v07-pre,  Up: Changelog
+
+5.2 v0.6
 ========
 
 *Additions*
@@ -440,7 +463,7 @@ File: README.info,  Node: v06,  Next: v051,  Up: Changelog
 
 File: README.info,  Node: v051,  Next: v05,  Prev: v06,  Up: Changelog
 
-5.2 v0.5.1
+5.3 v0.5.1
 ==========
 
 *Fixes*
@@ -449,7 +472,7 @@ File: README.info,  Node: v051,  Next: v05,  Prev: v06,  Up: Changelog
 
 File: README.info,  Node: v05,  Next: v04,  Prev: v051,  Up: Changelog
 
-5.3 v0.5
+5.4 v0.5
 ========
 
 *Additions*
@@ -490,7 +513,7 @@ File: README.info,  Node: v05,  Next: v04,  Prev: v051,  Up: Changelog
 
 File: README.info,  Node: v04,  Next: v033,  Prev: v05,  Up: Changelog
 
-5.4 v0.4
+5.5 v0.4
 ========
 
 *Additions*
@@ -507,7 +530,7 @@ File: README.info,  Node: v04,  Next: v033,  Prev: v05,  Up: Changelog
 
 File: README.info,  Node: v033,  Next: v032,  Prev: v04,  Up: Changelog
 
-5.5 v0.3.3
+5.6 v0.3.3
 ==========
 
 *Fixes*
@@ -521,7 +544,7 @@ File: README.info,  Node: v033,  Next: v032,  Prev: v04,  Up: Changelog
 
 File: README.info,  Node: v032,  Next: v031,  Prev: v033,  Up: Changelog
 
-5.6 v0.3.2
+5.7 v0.3.2
 ==========
 
 Updated documentation, etc.
@@ -529,7 +552,7 @@ Updated documentation, etc.
 
 File: README.info,  Node: v031,  Next: v03,  Prev: v032,  Up: Changelog
 
-5.7 v0.3.1
+5.8 v0.3.1
 ==========
 
 *Fixes*
@@ -541,7 +564,7 @@ File: README.info,  Node: v031,  Next: v03,  Prev: v032,  Up: Changelog
 
 File: README.info,  Node: v03,  Next: v02,  Prev: v031,  Up: Changelog
 
-5.8 v0.3
+5.9 v0.3
 ========
 
 *Additions*
@@ -554,8 +577,8 @@ File: README.info,  Node: v03,  Next: v02,  Prev: v031,  Up: Changelog
 
 File: README.info,  Node: v02,  Next: v013,  Prev: v03,  Up: Changelog
 
-5.9 v0.2
-========
+5.10 v0.2
+=========
 
 *Additions*
    • Offer current ‘project’ name by default for new activities.
@@ -570,7 +593,7 @@ File: README.info,  Node: v02,  Next: v013,  Prev: v03,  Up: Changelog
 
 File: README.info,  Node: v013,  Next: v012,  Prev: v02,  Up: Changelog
 
-5.10 v0.1.3
+5.11 v0.1.3
 ===========
 
 *Fixes*
@@ -580,7 +603,7 @@ File: README.info,  Node: v013,  Next: v012,  Prev: v02,  Up: Changelog
 
 File: README.info,  Node: v012,  Next: v011,  Prev: v013,  Up: Changelog
 
-5.11 v0.1.2
+5.12 v0.1.2
 ===========
 
 *Fixes*
@@ -589,7 +612,7 @@ File: README.info,  Node: v012,  Next: v011,  Prev: v013,  Up: Changelog
 
 File: README.info,  Node: v011,  Next: v01,  Prev: v012,  Up: Changelog
 
-5.12 v0.1.1
+5.13 v0.1.1
 ===========
 
 *Fixes*
@@ -598,7 +621,7 @@ File: README.info,  Node: v011,  Next: v01,  Prev: v012,  Up: Changelog
 
 File: README.info,  Node: v01,  Prev: v011,  Up: Changelog
 
-5.13 v0.1
+5.14 v0.1
 =========
 
 Initial release.
@@ -635,35 +658,36 @@ to request the assignment form.
 
 Tag Table:
 Node: Top231
-Node: Installation3086
-Node: GNU ELPA3237
-Node: Quelpa3602
-Node: Configuration4322
-Node: Usage5327
-Node: Activities5529
-Node: Compatibility6517
-Node: Modes7001
-Node: Workflow7669
-Node: Bindings8622
-Node: Commands9268
-Node: Bookmarks10927
-Node: FAQ11279
-Node: Changelog14390
-Node: v0614696
-Node: v05115929
-Node: v0516088
-Node: v0418065
-Node: v03318606
-Node: v03219036
-Node: v03119164
-Node: v0319494
-Node: v0219884
-Node: v01320376
-Node: v01220527
-Node: v01120706
-Node: v0120871
-Node: Development20972
-Node: Copyright assignment21244
+Node: Installation3107
+Node: GNU ELPA3258
+Node: Quelpa3623
+Node: Configuration4343
+Node: Usage5204
+Node: Activities5406
+Node: Compatibility6394
+Node: Modes6878
+Node: Workflow7546
+Node: Bindings8499
+Node: Commands9136
+Node: Bookmarks10951
+Node: FAQ11303
+Node: Changelog14414
+Node: v07-pre14741
+Node: v0615273
+Node: v05116522
+Node: v0516681
+Node: v0418658
+Node: v03319199
+Node: v03219629
+Node: v03119757
+Node: v0320087
+Node: v0220477
+Node: v01320971
+Node: v01221122
+Node: v01121301
+Node: v0121466
+Node: Development21567
+Node: Copyright assignment21839
 
 End Tag Table
 
