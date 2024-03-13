@@ -6,7 +6,7 @@
 ;; Maintainer: Adam Porter <adam@alphapapa.net>
 ;; URL: https://github.com/alphapapa/activities.el
 ;; Keywords: convenience
-;; Version: 0.7-pre
+;; Version: 0.7
 ;; Package-Requires: ((emacs "29.1") (persist "0.6"))
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -285,6 +285,10 @@ Only applies when `activities-tabs-mode' is disabled."
   :type 'boolean)
 
 (defcustom activities-anti-kill-predicates
+  ;; TODO(v0.7): Consider removing `activities-buffer-special-p'. from the
+  ;; default value.  Not sure if it's really a good idea (e.g. it
+  ;; would prevent Magit buffers from being killed, and for no good
+  ;; reason I can think of).
   '(activities-buffer-hidden-p activities-buffer-special-p)
   "Predicates which prevent a buffer from being killed.
 Used when suspending an activity and `activities-kill-buffers' is
@@ -746,6 +750,7 @@ activity's name is NAME."
   (with-temp-buffer
     (pcase-let* (((cl-struct activities-buffer bookmark) struct)
                  (temp-buffer (current-buffer))
+                 (error)
                  (jumped-to-buffer
                   (save-window-excursion
                     (condition-case err
@@ -755,8 +760,7 @@ activity's name is NAME."
                                       (bookmark-prop-get bookmark 'activities-buffer-local-variables)))
                             (cl-loop for (variable . value) in local-variable-map
                                      do (setf (buffer-local-value variable (current-buffer)) value))))
-                      (error (delay-warning 'activity
-                                            (format "Error while opening bookmark: ERROR:%S  RECORD:%S" err struct))))
+                      (error (setf error (format "Error while opening bookmark: ERROR:%S  RECORD:%S" err struct))))
                     (current-buffer))))
       (if (not (eq temp-buffer jumped-to-buffer))
           ;; Bookmark appears to have been jumped to: return that buffer.
@@ -766,6 +770,7 @@ activity's name is NAME."
          (format "%s:%s" (car bookmark) (bookmark-prop-get bookmark 'filename))
          (list "Activities was unable to get a buffer for bookmark:\n\n"
 	       (prin1-to-string bookmark) "\n\n"
+               "Error: " (prin1-to-string error) "\n\n"
 	       "It's likely that the bookmark's file no longer exists, in which case you may need to relocate it and redefine this activity.\n\n"
                "If this is not the case, please report this error to the `activities' maintainer.\n\n"
                "In the meantime, you may ignore this error and use the other buffers in the activity.\n\n"))))))
