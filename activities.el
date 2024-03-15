@@ -6,7 +6,7 @@
 ;; Maintainer: Adam Porter <adam@alphapapa.net>
 ;; URL: https://github.com/alphapapa/activities.el
 ;; Keywords: convenience
-;; Version: 0.7
+;; Version: 0.8-pre
 ;; Package-Requires: ((emacs "29.1") (persist "0.6"))
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -747,6 +747,7 @@ activity's name is NAME."
   ;; buffer was changed in order to know whether it worked.  We call
   ;; it from a temp buffer in case the jumped-to buffer would be the
   ;; same as the current buffer.
+  ;; FIXME: Use `bookmark-jump`'s DISPLAY-FUNC argument!
   (with-temp-buffer
     (pcase-let* (((cl-struct activities-buffer bookmark) struct)
                  (temp-buffer (current-buffer))
