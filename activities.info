@@ -1,4 +1,4 @@
-This is doc3v64jf.info, produced by makeinfo version 6.8 from
+This is docsRDVXC.info, produced by makeinfo version 6.8 from
 activities.texi.
 
 INFO-DIR-SECTION Emacs
@@ -7,7 +7,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: doc3v64jf.info,  Node: Top,  Next: Installation,  Up: (dir)
+File: docsRDVXC.info,  Node: Top,  Next: Installation,  Up: (dir)
 
 activities.el
 *************
@@ -81,6 +81,7 @@ Usage
 Changelog
 
 * v0.8-pre: v08-pre.
+* v0.7.1: v071.
 * v0.7: v07.
 * v0.6: v06.
 * v0.5.1: v051.
@@ -102,7 +103,7 @@ Development
 
 
 
-File: doc3v64jf.info,  Node: Installation,  Next: Configuration,  Prev: Top,  Up: Top
+File: docsRDVXC.info,  Node: Installation,  Next: Configuration,  Prev: Top,  Up: Top
 
 1 Installation
 **************
@@ -113,7 +114,7 @@ File: doc3v64jf.info,  Node: Installation,  Next: Configuration,  Prev: Top,  Up
 * Quelpa::
 
 
-File: doc3v64jf.info,  Node: GNU ELPA,  Next: Quelpa,  Up: Installation
+File: docsRDVXC.info,  Node: GNU ELPA,  Next: Quelpa,  Up: Installation
 
 1.1 GNU ELPA
 ============
@@ -124,7 +125,7 @@ command ‘M-x package-install RET activities RET’.  This will install the
 latest stable release, which is recommended.
 
 
-File: doc3v64jf.info,  Node: Quelpa,  Prev: GNU ELPA,  Up: Installation
+File: docsRDVXC.info,  Node: Quelpa,  Prev: GNU ELPA,  Up: Installation
 
 1.2 Quelpa
 ==========
@@ -145,7 +146,7 @@ recommended to use Quelpa (https://framagit.org/steckerhalter/quelpa):
 can’t offer help with manual installation problems.
 
 
-File: doc3v64jf.info,  Node: Configuration,  Next: Usage,  Prev: Installation,  Up: Top
+File: docsRDVXC.info,  Node: Configuration,  Next: Usage,  Prev: Installation,  Up: Top
 
 2 Configuration
 ***************
@@ -172,7 +173,7 @@ to be placed in the user’s init file:
         ("C-x C-a l" . activities-list)))
 
 
-File: doc3v64jf.info,  Node: Usage,  Next: FAQ,  Prev: Configuration,  Up: Top
+File: docsRDVXC.info,  Node: Usage,  Next: FAQ,  Prev: Configuration,  Up: Top
 
 3 Usage
 *******
@@ -188,7 +189,7 @@ File: doc3v64jf.info,  Node: Usage,  Next: FAQ,  Prev: Configuration,  Up: Top
 * Bookmarks::
 
 
-File: doc3v64jf.info,  Node: Activities,  Next: Compatibility,  Up: Usage
+File: docsRDVXC.info,  Node: Activities,  Next: Compatibility,  Up: Usage
 
 3.1 Activities
 ==============
@@ -210,7 +211,7 @@ state, which may be used as a kind of entry point to doing the activity
 in general.
 
 
-File: doc3v64jf.info,  Node: Compatibility,  Next: Modes,  Prev: Activities,  Up: Usage
+File: docsRDVXC.info,  Node: Compatibility,  Next: Modes,  Prev: Activities,  Up: Usage
 
 3.2 Compatibility
 =================
@@ -223,7 +224,7 @@ existing tab commands, regardless of whether it is associated with an
 activity.
 
 
-File: doc3v64jf.info,  Node: Modes,  Next: Workflow,  Prev: Compatibility,  Up: Usage
+File: docsRDVXC.info,  Node: Modes,  Next: Workflow,  Prev: Compatibility,  Up: Usage
 
 3.3 Modes
 =========
@@ -240,7 +241,7 @@ File: doc3v64jf.info,  Node: Modes,  Next: Workflow,  Prev: Compatibility,  Up: 
      please report them._)
 
 
-File: doc3v64jf.info,  Node: Workflow,  Next: Bindings,  Prev: Modes,  Up: Usage
+File: docsRDVXC.info,  Node: Workflow,  Next: Bindings,  Prev: Modes,  Up: Usage
 
 3.4 Workflow
 ============
@@ -265,7 +266,7 @@ An example of a workflow using activities:
      saves its last state and closes its frame/tab).
 
 
-File: doc3v64jf.info,  Node: Bindings,  Next: Commands,  Prev: Workflow,  Up: Usage
+File: docsRDVXC.info,  Node: Bindings,  Next: Commands,  Prev: Workflow,  Up: Usage
 
 3.5 Bindings
 ============
@@ -282,7 +283,7 @@ philosophy behind them:
      activities.)
 
 
-File: doc3v64jf.info,  Node: Commands,  Next: Bookmarks,  Prev: Bindings,  Up: Usage
+File: docsRDVXC.info,  Node: Commands,  Next: Bookmarks,  Prev: Bindings,  Up: Usage
 
 3.6 Commands
 ============
@@ -325,7 +326,7 @@ _With the recommended bindings:_
      automatically, so this command should rarely be needed.)
 
 
-File: doc3v64jf.info,  Node: Bookmarks,  Prev: Commands,  Up: Usage
+File: docsRDVXC.info,  Node: Bookmarks,  Prev: Commands,  Up: Usage
 
 3.7 Bookmarks
 =============
@@ -336,7 +337,7 @@ stored when a new activity is made.  This allows the command
 universalize the bookmark system).
 
 
-File: doc3v64jf.info,  Node: FAQ,  Next: Changelog,  Prev: Usage,  Up: Top
+File: docsRDVXC.info,  Node: FAQ,  Next: Changelog,  Prev: Usage,  Up: Top
 
 4 FAQ
 *****
@@ -393,7 +394,7 @@ Why did I get an error?
      proceed smoothly.  Please report any bugs you find.
 
 
-File: doc3v64jf.info,  Node: Changelog,  Next: Development,  Prev: FAQ,  Up: Top
+File: docsRDVXC.info,  Node: Changelog,  Next: Development,  Prev: FAQ,  Up: Top
 
 5 Changelog
 ***********
@@ -401,6 +402,7 @@ File: doc3v64jf.info,  Node: Changelog,  Next: Development,  Prev: FAQ,  Up: Top
 * Menu:
 
 * v0.8-pre: v08-pre.
+* v0.7.1: v071.
 * v0.7: v07.
 * v0.6: v06.
 * v0.5.1: v051.
@@ -417,10 +419,18 @@ File: doc3v64jf.info,  Node: Changelog,  Next: Development,  Prev: FAQ,  Up: Top
 * v0.1: v01.
 
 
-File: doc3v64jf.info,  Node: v08-pre,  Next: v07,  Up: Changelog
+File: docsRDVXC.info,  Node: v08-pre,  Next: v071,  Up: Changelog
 
 5.1 v0.8-pre
 ============
+
+Nothing new yet.
+
+
+File: docsRDVXC.info,  Node: v071,  Next: v07,  Prev: v08-pre,  Up: Changelog
+
+5.2 v0.7.1
+==========
 
 *Fixes*
    • Race condition when restoring multiple activities in rapid
@@ -434,11 +444,14 @@ File: doc3v64jf.info,  Node: v08-pre,  Next: v07,  Up: Changelog
    • Refreshing activities list.  (#77
      (https://github.com/alphapapa/activities.el/pull/77).  Thanks to
      Joseph Turner (https://breatheoutbreathe.in).)
+   • Autoload bookmark handler.  (#114
+     (https://github.com/alphapapa/activity.el/pull/114).  Thanks to
+     Joseph Turner (https://breatheoutbreathe.in).)
 
 
-File: doc3v64jf.info,  Node: v07,  Next: v06,  Prev: v08-pre,  Up: Changelog
+File: docsRDVXC.info,  Node: v07,  Next: v06,  Prev: v071,  Up: Changelog
 
-5.2 v0.7
+5.3 v0.7
 ========
 
 *Additions*
@@ -460,9 +473,9 @@ File: doc3v64jf.info,  Node: v07,  Next: v06,  Prev: v08-pre,  Up: Changelog
      Jelle Licht (https://github.com/jellelicht).)
 
 
-File: doc3v64jf.info,  Node: v06,  Next: v051,  Prev: v07,  Up: Changelog
+File: docsRDVXC.info,  Node: v06,  Next: v051,  Prev: v07,  Up: Changelog
 
-5.3 v0.6
+5.4 v0.6
 ========
 
 *Additions*
@@ -489,18 +502,18 @@ File: doc3v64jf.info,  Node: v06,  Next: v051,  Prev: v07,  Up: Changelog
      Al M.  (https://github.com/yrns) for reporting.)
 
 
-File: doc3v64jf.info,  Node: v051,  Next: v05,  Prev: v06,  Up: Changelog
+File: docsRDVXC.info,  Node: v051,  Next: v05,  Prev: v06,  Up: Changelog
 
-5.4 v0.5.1
+5.5 v0.5.1
 ==========
 
 *Fixes*
    • Listing activities without last-saved states.
 
 
-File: doc3v64jf.info,  Node: v05,  Next: v04,  Prev: v051,  Up: Changelog
+File: docsRDVXC.info,  Node: v05,  Next: v04,  Prev: v051,  Up: Changelog
 
-5.5 v0.5
+5.6 v0.5
 ========
 
 *Additions*
@@ -539,9 +552,9 @@ File: doc3v64jf.info,  Node: v05,  Next: v04,  Prev: v051,  Up: Changelog
      Karthik Chikmagalur (https://github.com/karthink) for reporting.)
 
 
-File: doc3v64jf.info,  Node: v04,  Next: v033,  Prev: v05,  Up: Changelog
+File: docsRDVXC.info,  Node: v04,  Next: v033,  Prev: v05,  Up: Changelog
 
-5.6 v0.4
+5.7 v0.4
 ========
 
 *Additions*
@@ -556,9 +569,9 @@ File: doc3v64jf.info,  Node: v04,  Next: v033,  Prev: v05,  Up: Changelog
      JD Smith (https://github.com/jdtsmith) for reporting.)
 
 
-File: doc3v64jf.info,  Node: v033,  Next: v032,  Prev: v04,  Up: Changelog
+File: docsRDVXC.info,  Node: v033,  Next: v032,  Prev: v04,  Up: Changelog
 
-5.7 v0.3.3
+5.8 v0.3.3
 ==========
 
 *Fixes*
@@ -570,18 +583,18 @@ File: doc3v64jf.info,  Node: v033,  Next: v032,  Prev: v04,  Up: Changelog
      the moment).
 
 
-File: doc3v64jf.info,  Node: v032,  Next: v031,  Prev: v033,  Up: Changelog
+File: docsRDVXC.info,  Node: v032,  Next: v031,  Prev: v033,  Up: Changelog
 
-5.8 v0.3.2
+5.9 v0.3.2
 ==========
 
 Updated documentation, etc.
 
 
-File: doc3v64jf.info,  Node: v031,  Next: v03,  Prev: v032,  Up: Changelog
+File: docsRDVXC.info,  Node: v031,  Next: v03,  Prev: v032,  Up: Changelog
 
-5.9 v0.3.1
-==========
+5.10 v0.3.1
+===========
 
 *Fixes*
    • Handle case in which ‘activities-tabs-mode’ is enabled again
@@ -590,9 +603,9 @@ File: doc3v64jf.info,  Node: v031,  Next: v03,  Prev: v032,  Up: Changelog
      (https://github.com/alphapapa/activities.el/issues/7))
 
 
-File: doc3v64jf.info,  Node: v03,  Next: v02,  Prev: v031,  Up: Changelog
+File: docsRDVXC.info,  Node: v03,  Next: v02,  Prev: v031,  Up: Changelog
 
-5.10 v0.3
+5.11 v0.3
 =========
 
 *Additions*
@@ -603,9 +616,9 @@ File: doc3v64jf.info,  Node: v03,  Next: v02,  Prev: v031,  Up: Changelog
    • Record times at which activities’ states were updated.
 
 
-File: doc3v64jf.info,  Node: v02,  Next: v013,  Prev: v03,  Up: Changelog
+File: docsRDVXC.info,  Node: v02,  Next: v013,  Prev: v03,  Up: Changelog
 
-5.11 v0.2
+5.12 v0.2
 =========
 
 *Additions*
@@ -619,9 +632,9 @@ File: doc3v64jf.info,  Node: v02,  Next: v013,  Prev: v03,  Up: Changelog
      (https://github.com/jdtsmith) for suggesting.)
 
 
-File: doc3v64jf.info,  Node: v013,  Next: v012,  Prev: v02,  Up: Changelog
+File: docsRDVXC.info,  Node: v013,  Next: v012,  Prev: v02,  Up: Changelog
 
-5.12 v0.1.3
+5.13 v0.1.3
 ===========
 
 *Fixes*
@@ -629,33 +642,33 @@ File: doc3v64jf.info,  Node: v013,  Next: v012,  Prev: v02,  Up: Changelog
    • Command aliases.
 
 
-File: doc3v64jf.info,  Node: v012,  Next: v011,  Prev: v013,  Up: Changelog
+File: docsRDVXC.info,  Node: v012,  Next: v011,  Prev: v013,  Up: Changelog
 
-5.13 v0.1.2
+5.14 v0.1.2
 ===========
 
 *Fixes*
    • Some single-window configurations were not restored properly.
 
 
-File: doc3v64jf.info,  Node: v011,  Next: v01,  Prev: v012,  Up: Changelog
+File: docsRDVXC.info,  Node: v011,  Next: v01,  Prev: v012,  Up: Changelog
 
-5.14 v0.1.1
+5.15 v0.1.1
 ===========
 
 *Fixes*
    • Silence message about non-file-visiting buffers.
 
 
-File: doc3v64jf.info,  Node: v01,  Prev: v011,  Up: Changelog
+File: docsRDVXC.info,  Node: v01,  Prev: v011,  Up: Changelog
 
-5.15 v0.1
+5.16 v0.1
 =========
 
 Initial release.
 
 
-File: doc3v64jf.info,  Node: Development,  Prev: Changelog,  Up: Top
+File: docsRDVXC.info,  Node: Development,  Prev: Changelog,  Up: Top
 
 6 Development
 *************
@@ -669,7 +682,7 @@ and patches are welcome.
 * Copyright assignment::
 
 
-File: doc3v64jf.info,  Node: Copyright assignment,  Up: Development
+File: docsRDVXC.info,  Node: Copyright assignment,  Up: Development
 
 6.1 Copyright assignment
 ========================
@@ -686,37 +699,38 @@ to request the assignment form.
 
 Tag Table:
 Node: Top238
-Node: Installation3130
-Node: GNU ELPA3284
-Node: Quelpa3652
-Node: Configuration4375
-Node: Usage5239
-Node: Activities5444
-Node: Compatibility6435
-Node: Modes6922
-Node: Workflow7593
-Node: Bindings8559
-Node: Commands9199
-Node: Bookmarks11017
-Node: FAQ11372
-Node: Changelog14486
-Node: v08-pre14829
-Node: v0715539
-Node: v0616434
-Node: v05117682
-Node: v0517844
-Node: v0419824
-Node: v03320368
-Node: v03220801
-Node: v03120932
-Node: v0321265
-Node: v0221660
-Node: v01322157
-Node: v01222311
-Node: v01122493
-Node: v0122661
-Node: Development22765
-Node: Copyright assignment23040
+Node: Installation3146
+Node: GNU ELPA3300
+Node: Quelpa3668
+Node: Configuration4391
+Node: Usage5255
+Node: Activities5460
+Node: Compatibility6451
+Node: Modes6938
+Node: Workflow7609
+Node: Bindings8575
+Node: Commands9215
+Node: Bookmarks11033
+Node: FAQ11388
+Node: Changelog14502
+Node: v08-pre14861
+Node: v07114975
+Node: v0715856
+Node: v0616748
+Node: v05117996
+Node: v0518158
+Node: v0420138
+Node: v03320682
+Node: v03221115
+Node: v03121246
+Node: v0321581
+Node: v0221976
+Node: v01322473
+Node: v01222627
+Node: v01122809
+Node: v0122977
+Node: Development23081
+Node: Copyright assignment23356
 
 End Tag Table
 
