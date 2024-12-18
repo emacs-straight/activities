@@ -1,4 +1,4 @@
-This is docsRDVXC.info, produced by makeinfo version 6.8 from
+This is docnL8qzK.info, produced by makeinfo version 6.8 from
 activities.texi.
 
 INFO-DIR-SECTION Emacs
@@ -7,7 +7,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: docsRDVXC.info,  Node: Top,  Next: Installation,  Up: (dir)
+File: docnL8qzK.info,  Node: Top,  Next: Installation,  Up: (dir)
 
 activities.el
 *************
@@ -81,6 +81,7 @@ Usage
 Changelog
 
 * v0.8-pre: v08-pre.
+* v0.7.2: v072.
 * v0.7.1: v071.
 * v0.7: v07.
 * v0.6: v06.
@@ -103,7 +104,7 @@ Development
 
 
 
-File: docsRDVXC.info,  Node: Installation,  Next: Configuration,  Prev: Top,  Up: Top
+File: docnL8qzK.info,  Node: Installation,  Next: Configuration,  Prev: Top,  Up: Top
 
 1 Installation
 **************
@@ -114,7 +115,7 @@ File: docsRDVXC.info,  Node: Installation,  Next: Configuration,  Prev: Top,  Up
 * Quelpa::
 
 
-File: docsRDVXC.info,  Node: GNU ELPA,  Next: Quelpa,  Up: Installation
+File: docnL8qzK.info,  Node: GNU ELPA,  Next: Quelpa,  Up: Installation
 
 1.1 GNU ELPA
 ============
@@ -125,7 +126,7 @@ command ‘M-x package-install RET activities RET’.  This will install the
 latest stable release, which is recommended.
 
 
-File: docsRDVXC.info,  Node: Quelpa,  Prev: GNU ELPA,  Up: Installation
+File: docnL8qzK.info,  Node: Quelpa,  Prev: GNU ELPA,  Up: Installation
 
 1.2 Quelpa
 ==========
@@ -146,7 +147,7 @@ recommended to use Quelpa (https://framagit.org/steckerhalter/quelpa):
 can’t offer help with manual installation problems.
 
 
-File: docsRDVXC.info,  Node: Configuration,  Next: Usage,  Prev: Installation,  Up: Top
+File: docnL8qzK.info,  Node: Configuration,  Next: Usage,  Prev: Installation,  Up: Top
 
 2 Configuration
 ***************
@@ -173,7 +174,7 @@ to be placed in the user’s init file:
         ("C-x C-a l" . activities-list)))
 
 
-File: docsRDVXC.info,  Node: Usage,  Next: FAQ,  Prev: Configuration,  Up: Top
+File: docnL8qzK.info,  Node: Usage,  Next: FAQ,  Prev: Configuration,  Up: Top
 
 3 Usage
 *******
@@ -189,7 +190,7 @@ File: docsRDVXC.info,  Node: Usage,  Next: FAQ,  Prev: Configuration,  Up: Top
 * Bookmarks::
 
 
-File: docsRDVXC.info,  Node: Activities,  Next: Compatibility,  Up: Usage
+File: docnL8qzK.info,  Node: Activities,  Next: Compatibility,  Up: Usage
 
 3.1 Activities
 ==============
@@ -211,7 +212,7 @@ state, which may be used as a kind of entry point to doing the activity
 in general.
 
 
-File: docsRDVXC.info,  Node: Compatibility,  Next: Modes,  Prev: Activities,  Up: Usage
+File: docnL8qzK.info,  Node: Compatibility,  Next: Modes,  Prev: Activities,  Up: Usage
 
 3.2 Compatibility
 =================
@@ -224,7 +225,7 @@ existing tab commands, regardless of whether it is associated with an
 activity.
 
 
-File: docsRDVXC.info,  Node: Modes,  Next: Workflow,  Prev: Compatibility,  Up: Usage
+File: docnL8qzK.info,  Node: Modes,  Next: Workflow,  Prev: Compatibility,  Up: Usage
 
 3.3 Modes
 =========
@@ -241,7 +242,7 @@ File: docsRDVXC.info,  Node: Modes,  Next: Workflow,  Prev: Compatibility,  Up: 
      please report them._)
 
 
-File: docsRDVXC.info,  Node: Workflow,  Next: Bindings,  Prev: Modes,  Up: Usage
+File: docnL8qzK.info,  Node: Workflow,  Next: Bindings,  Prev: Modes,  Up: Usage
 
 3.4 Workflow
 ============
@@ -266,7 +267,7 @@ An example of a workflow using activities:
      saves its last state and closes its frame/tab).
 
 
-File: docsRDVXC.info,  Node: Bindings,  Next: Commands,  Prev: Workflow,  Up: Usage
+File: docnL8qzK.info,  Node: Bindings,  Next: Commands,  Prev: Workflow,  Up: Usage
 
 3.5 Bindings
 ============
@@ -283,7 +284,7 @@ philosophy behind them:
      activities.)
 
 
-File: docsRDVXC.info,  Node: Commands,  Next: Bookmarks,  Prev: Bindings,  Up: Usage
+File: docnL8qzK.info,  Node: Commands,  Next: Bookmarks,  Prev: Bindings,  Up: Usage
 
 3.6 Commands
 ============
@@ -326,7 +327,7 @@ _With the recommended bindings:_
      automatically, so this command should rarely be needed.)
 
 
-File: docsRDVXC.info,  Node: Bookmarks,  Prev: Commands,  Up: Usage
+File: docnL8qzK.info,  Node: Bookmarks,  Prev: Commands,  Up: Usage
 
 3.7 Bookmarks
 =============
@@ -337,7 +338,7 @@ stored when a new activity is made.  This allows the command
 universalize the bookmark system).
 
 
-File: docsRDVXC.info,  Node: FAQ,  Next: Changelog,  Prev: Usage,  Up: Top
+File: docnL8qzK.info,  Node: FAQ,  Next: Changelog,  Prev: Usage,  Up: Top
 
 4 FAQ
 *****
@@ -394,7 +395,7 @@ Why did I get an error?
      proceed smoothly.  Please report any bugs you find.
 
 
-File: docsRDVXC.info,  Node: Changelog,  Next: Development,  Prev: FAQ,  Up: Top
+File: docnL8qzK.info,  Node: Changelog,  Next: Development,  Prev: FAQ,  Up: Top
 
 5 Changelog
 ***********
@@ -402,6 +403,7 @@ File: docsRDVXC.info,  Node: Changelog,  Next: Development,  Prev: FAQ,  Up: Top
 * Menu:
 
 * v0.8-pre: v08-pre.
+* v0.7.2: v072.
 * v0.7.1: v071.
 * v0.7: v07.
 * v0.6: v06.
@@ -419,7 +421,7 @@ File: docsRDVXC.info,  Node: Changelog,  Next: Development,  Prev: FAQ,  Up: Top
 * v0.1: v01.
 
 
-File: docsRDVXC.info,  Node: v08-pre,  Next: v071,  Up: Changelog
+File: docnL8qzK.info,  Node: v08-pre,  Next: v072,  Up: Changelog
 
 5.1 v0.8-pre
 ============
@@ -427,9 +429,21 @@ File: docsRDVXC.info,  Node: v08-pre,  Next: v071,  Up: Changelog
 Nothing new yet.
 
 
-File: docsRDVXC.info,  Node: v071,  Next: v07,  Prev: v08-pre,  Up: Changelog
+File: docnL8qzK.info,  Node: v072,  Next: v071,  Prev: v08-pre,  Up: Changelog
 
-5.2 v0.7.1
+5.2 v0.7.2
+==========
+
+*Fixes*
+   • Handle errors from window parameter deserializers.  (#44
+     (https://github.com/alphapapa/activities.el/issues/44).  Thanks to
+     Karthik Chikmagalur (https://github.com/karthink) and stardiviner
+     (https://github.com/stardiviner) for reporting.)
+
+
+File: docnL8qzK.info,  Node: v071,  Next: v07,  Prev: v072,  Up: Changelog
+
+5.3 v0.7.1
 ==========
 
 *Fixes*
@@ -449,9 +463,9 @@ File: docsRDVXC.info,  Node: v071,  Next: v07,  Prev: v08-pre,  Up: Changelog
      Joseph Turner (https://breatheoutbreathe.in).)
 
 
-File: docsRDVXC.info,  Node: v07,  Next: v06,  Prev: v071,  Up: Changelog
+File: docnL8qzK.info,  Node: v07,  Next: v06,  Prev: v071,  Up: Changelog
 
-5.3 v0.7
+5.4 v0.7
 ========
 
 *Additions*
@@ -473,9 +487,9 @@ File: docsRDVXC.info,  Node: v07,  Next: v06,  Prev: v071,  Up: Changelog
      Jelle Licht (https://github.com/jellelicht).)
 
 
-File: docsRDVXC.info,  Node: v06,  Next: v051,  Prev: v07,  Up: Changelog
+File: docnL8qzK.info,  Node: v06,  Next: v051,  Prev: v07,  Up: Changelog
 
-5.4 v0.6
+5.5 v0.6
 ========
 
 *Additions*
@@ -502,18 +516,18 @@ File: docsRDVXC.info,  Node: v06,  Next: v051,  Prev: v07,  Up: Changelog
      Al M.  (https://github.com/yrns) for reporting.)
 
 
-File: docsRDVXC.info,  Node: v051,  Next: v05,  Prev: v06,  Up: Changelog
+File: docnL8qzK.info,  Node: v051,  Next: v05,  Prev: v06,  Up: Changelog
 
-5.5 v0.5.1
+5.6 v0.5.1
 ==========
 
 *Fixes*
    • Listing activities without last-saved states.
 
 
-File: docsRDVXC.info,  Node: v05,  Next: v04,  Prev: v051,  Up: Changelog
+File: docnL8qzK.info,  Node: v05,  Next: v04,  Prev: v051,  Up: Changelog
 
-5.6 v0.5
+5.7 v0.5
 ========
 
 *Additions*
@@ -552,9 +566,9 @@ File: docsRDVXC.info,  Node: v05,  Next: v04,  Prev: v051,  Up: Changelog
      Karthik Chikmagalur (https://github.com/karthink) for reporting.)
 
 
-File: docsRDVXC.info,  Node: v04,  Next: v033,  Prev: v05,  Up: Changelog
+File: docnL8qzK.info,  Node: v04,  Next: v033,  Prev: v05,  Up: Changelog
 
-5.7 v0.4
+5.8 v0.4
 ========
 
 *Additions*
@@ -569,9 +583,9 @@ File: docsRDVXC.info,  Node: v04,  Next: v033,  Prev: v05,  Up: Changelog
      JD Smith (https://github.com/jdtsmith) for reporting.)
 
 
-File: docsRDVXC.info,  Node: v033,  Next: v032,  Prev: v04,  Up: Changelog
+File: docnL8qzK.info,  Node: v033,  Next: v032,  Prev: v04,  Up: Changelog
 
-5.8 v0.3.3
+5.9 v0.3.3
 ==========
 
 *Fixes*
@@ -583,17 +597,17 @@ File: docsRDVXC.info,  Node: v033,  Next: v032,  Prev: v04,  Up: Changelog
      the moment).
 
 
-File: docsRDVXC.info,  Node: v032,  Next: v031,  Prev: v033,  Up: Changelog
+File: docnL8qzK.info,  Node: v032,  Next: v031,  Prev: v033,  Up: Changelog
 
-5.9 v0.3.2
-==========
+5.10 v0.3.2
+===========
 
 Updated documentation, etc.
 
 
-File: docsRDVXC.info,  Node: v031,  Next: v03,  Prev: v032,  Up: Changelog
+File: docnL8qzK.info,  Node: v031,  Next: v03,  Prev: v032,  Up: Changelog
 
-5.10 v0.3.1
+5.11 v0.3.1
 ===========
 
 *Fixes*
@@ -603,9 +617,9 @@ File: docsRDVXC.info,  Node: v031,  Next: v03,  Prev: v032,  Up: Changelog
      (https://github.com/alphapapa/activities.el/issues/7))
 
 
-File: docsRDVXC.info,  Node: v03,  Next: v02,  Prev: v031,  Up: Changelog
+File: docnL8qzK.info,  Node: v03,  Next: v02,  Prev: v031,  Up: Changelog
 
-5.11 v0.3
+5.12 v0.3
 =========
 
 *Additions*
@@ -616,9 +630,9 @@ File: docsRDVXC.info,  Node: v03,  Next: v02,  Prev: v031,  Up: Changelog
    • Record times at which activities’ states were updated.
 
 
-File: docsRDVXC.info,  Node: v02,  Next: v013,  Prev: v03,  Up: Changelog
+File: docnL8qzK.info,  Node: v02,  Next: v013,  Prev: v03,  Up: Changelog
 
-5.12 v0.2
+5.13 v0.2
 =========
 
 *Additions*
@@ -632,9 +646,9 @@ File: docsRDVXC.info,  Node: v02,  Next: v013,  Prev: v03,  Up: Changelog
      (https://github.com/jdtsmith) for suggesting.)
 
 
-File: docsRDVXC.info,  Node: v013,  Next: v012,  Prev: v02,  Up: Changelog
+File: docnL8qzK.info,  Node: v013,  Next: v012,  Prev: v02,  Up: Changelog
 
-5.13 v0.1.3
+5.14 v0.1.3
 ===========
 
 *Fixes*
@@ -642,33 +656,33 @@ File: docsRDVXC.info,  Node: v013,  Next: v012,  Prev: v02,  Up: Changelog
    • Command aliases.
 
 
-File: docsRDVXC.info,  Node: v012,  Next: v011,  Prev: v013,  Up: Changelog
+File: docnL8qzK.info,  Node: v012,  Next: v011,  Prev: v013,  Up: Changelog
 
-5.14 v0.1.2
+5.15 v0.1.2
 ===========
 
 *Fixes*
    • Some single-window configurations were not restored properly.
 
 
-File: docsRDVXC.info,  Node: v011,  Next: v01,  Prev: v012,  Up: Changelog
+File: docnL8qzK.info,  Node: v011,  Next: v01,  Prev: v012,  Up: Changelog
 
-5.15 v0.1.1
+5.16 v0.1.1
 ===========
 
 *Fixes*
    • Silence message about non-file-visiting buffers.
 
 
-File: docsRDVXC.info,  Node: v01,  Prev: v011,  Up: Changelog
+File: docnL8qzK.info,  Node: v01,  Prev: v011,  Up: Changelog
 
-5.16 v0.1
+5.17 v0.1
 =========
 
 Initial release.
 
 
-File: docsRDVXC.info,  Node: Development,  Prev: Changelog,  Up: Top
+File: docnL8qzK.info,  Node: Development,  Prev: Changelog,  Up: Top
 
 6 Development
 *************
@@ -682,7 +696,7 @@ and patches are welcome.
 * Copyright assignment::
 
 
-File: docsRDVXC.info,  Node: Copyright assignment,  Up: Development
+File: docnL8qzK.info,  Node: Copyright assignment,  Up: Development
 
 6.1 Copyright assignment
 ========================
@@ -699,38 +713,39 @@ to request the assignment form.
 
 Tag Table:
 Node: Top238
-Node: Installation3146
-Node: GNU ELPA3300
-Node: Quelpa3668
-Node: Configuration4391
-Node: Usage5255
-Node: Activities5460
-Node: Compatibility6451
-Node: Modes6938
-Node: Workflow7609
-Node: Bindings8575
-Node: Commands9215
-Node: Bookmarks11033
-Node: FAQ11388
-Node: Changelog14502
-Node: v08-pre14861
-Node: v07114975
-Node: v0715856
-Node: v0616748
-Node: v05117996
-Node: v0518158
-Node: v0420138
-Node: v03320682
-Node: v03221115
-Node: v03121246
-Node: v0321581
-Node: v0221976
-Node: v01322473
-Node: v01222627
-Node: v01122809
-Node: v0122977
-Node: Development23081
-Node: Copyright assignment23356
+Node: Installation3162
+Node: GNU ELPA3316
+Node: Quelpa3684
+Node: Configuration4407
+Node: Usage5271
+Node: Activities5476
+Node: Compatibility6467
+Node: Modes6954
+Node: Workflow7625
+Node: Bindings8591
+Node: Commands9231
+Node: Bookmarks11049
+Node: FAQ11404
+Node: Changelog14518
+Node: v08-pre14893
+Node: v07215007
+Node: v07115382
+Node: v0716260
+Node: v0617152
+Node: v05118400
+Node: v0518562
+Node: v0420542
+Node: v03321086
+Node: v03221519
+Node: v03121652
+Node: v0321987
+Node: v0222382
+Node: v01322879
+Node: v01223033
+Node: v01123215
+Node: v0123383
+Node: Development23487
+Node: Copyright assignment23762
 
 End Tag Table
 
