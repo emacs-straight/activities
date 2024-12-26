@@ -1,4 +1,4 @@
-This is docnL8qzK.info, produced by makeinfo version 6.8 from
+This is docGzRVIJ.info, produced by makeinfo version 6.8 from
 activities.texi.
 
 INFO-DIR-SECTION Emacs
@@ -7,7 +7,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: docnL8qzK.info,  Node: Top,  Next: Installation,  Up: (dir)
+File: docGzRVIJ.info,  Node: Top,  Next: Installation,  Up: (dir)
 
 activities.el
 *************
@@ -77,6 +77,7 @@ Usage
 * Bindings::
 * Commands::
 * Bookmarks::
+* Completion::
 
 Changelog
 
@@ -104,7 +105,7 @@ Development
 
 
 
-File: docnL8qzK.info,  Node: Installation,  Next: Configuration,  Prev: Top,  Up: Top
+File: docGzRVIJ.info,  Node: Installation,  Next: Configuration,  Prev: Top,  Up: Top
 
 1 Installation
 **************
@@ -115,7 +116,7 @@ File: docnL8qzK.info,  Node: Installation,  Next: Configuration,  Prev: Top,  Up
 * Quelpa::
 
 
-File: docnL8qzK.info,  Node: GNU ELPA,  Next: Quelpa,  Up: Installation
+File: docGzRVIJ.info,  Node: GNU ELPA,  Next: Quelpa,  Up: Installation
 
 1.1 GNU ELPA
 ============
@@ -126,7 +127,7 @@ command ‘M-x package-install RET activities RET’.  This will install the
 latest stable release, which is recommended.
 
 
-File: docnL8qzK.info,  Node: Quelpa,  Prev: GNU ELPA,  Up: Installation
+File: docGzRVIJ.info,  Node: Quelpa,  Prev: GNU ELPA,  Up: Installation
 
 1.2 Quelpa
 ==========
@@ -147,7 +148,7 @@ recommended to use Quelpa (https://framagit.org/steckerhalter/quelpa):
 can’t offer help with manual installation problems.
 
 
-File: docnL8qzK.info,  Node: Configuration,  Next: Usage,  Prev: Installation,  Up: Top
+File: docGzRVIJ.info,  Node: Configuration,  Next: Usage,  Prev: Installation,  Up: Top
 
 2 Configuration
 ***************
@@ -174,7 +175,7 @@ to be placed in the user’s init file:
         ("C-x C-a l" . activities-list)))
 
 
-File: docnL8qzK.info,  Node: Usage,  Next: FAQ,  Prev: Configuration,  Up: Top
+File: docGzRVIJ.info,  Node: Usage,  Next: FAQ,  Prev: Configuration,  Up: Top
 
 3 Usage
 *******
@@ -188,9 +189,10 @@ File: docnL8qzK.info,  Node: Usage,  Next: FAQ,  Prev: Configuration,  Up: Top
 * Bindings::
 * Commands::
 * Bookmarks::
+* Completion::
 
 
-File: docnL8qzK.info,  Node: Activities,  Next: Compatibility,  Up: Usage
+File: docGzRVIJ.info,  Node: Activities,  Next: Compatibility,  Up: Usage
 
 3.1 Activities
 ==============
@@ -212,7 +214,7 @@ state, which may be used as a kind of entry point to doing the activity
 in general.
 
 
-File: docnL8qzK.info,  Node: Compatibility,  Next: Modes,  Prev: Activities,  Up: Usage
+File: docGzRVIJ.info,  Node: Compatibility,  Next: Modes,  Prev: Activities,  Up: Usage
 
 3.2 Compatibility
 =================
@@ -225,7 +227,7 @@ existing tab commands, regardless of whether it is associated with an
 activity.
 
 
-File: docnL8qzK.info,  Node: Modes,  Next: Workflow,  Prev: Compatibility,  Up: Usage
+File: docGzRVIJ.info,  Node: Modes,  Next: Workflow,  Prev: Compatibility,  Up: Usage
 
 3.3 Modes
 =========
@@ -242,7 +244,7 @@ File: docnL8qzK.info,  Node: Modes,  Next: Workflow,  Prev: Compatibility,  Up: 
      please report them._)
 
 
-File: docnL8qzK.info,  Node: Workflow,  Next: Bindings,  Prev: Modes,  Up: Usage
+File: docGzRVIJ.info,  Node: Workflow,  Next: Bindings,  Prev: Modes,  Up: Usage
 
 3.4 Workflow
 ============
@@ -267,7 +269,7 @@ An example of a workflow using activities:
      saves its last state and closes its frame/tab).
 
 
-File: docnL8qzK.info,  Node: Bindings,  Next: Commands,  Prev: Workflow,  Up: Usage
+File: docGzRVIJ.info,  Node: Bindings,  Next: Commands,  Prev: Workflow,  Up: Usage
 
 3.5 Bindings
 ============
@@ -284,7 +286,7 @@ philosophy behind them:
      activities.)
 
 
-File: docnL8qzK.info,  Node: Commands,  Next: Bookmarks,  Prev: Bindings,  Up: Usage
+File: docGzRVIJ.info,  Node: Commands,  Next: Bookmarks,  Prev: Bindings,  Up: Usage
 
 3.6 Commands
 ============
@@ -327,7 +329,7 @@ _With the recommended bindings:_
      automatically, so this command should rarely be needed.)
 
 
-File: docnL8qzK.info,  Node: Bookmarks,  Prev: Commands,  Up: Usage
+File: docGzRVIJ.info,  Node: Bookmarks,  Next: Completion,  Prev: Commands,  Up: Usage
 
 3.7 Bookmarks
 =============
@@ -338,7 +340,27 @@ stored when a new activity is made.  This allows the command
 universalize the bookmark system).
 
 
-File: docnL8qzK.info,  Node: FAQ,  Next: Changelog,  Prev: Usage,  Up: Top
+File: docGzRVIJ.info,  Node: Completion,  Prev: Bookmarks,  Up: Usage
+
+3.8 Completion
+==============
+
+When selecting an activity in the minibuffer, if you are using an
+interface that supports _annotations_, additional information is shown
+alongside the activity name:
+
+   • An ‘@’ symbol for active activities,
+   • The number of buffers and files the activity contains,
+   • A color-coded age (elapsed time since the activity was last
+     updated), and
+   • A final ‘*’ if the activity’s list of buffers and files has been
+     modified from its default state.
+
+   The sort order when completing activities can be configured using
+‘activities-sort-by’.
+
+
+File: docGzRVIJ.info,  Node: FAQ,  Next: Changelog,  Prev: Usage,  Up: Top
 
 4 FAQ
 *****
@@ -395,7 +417,7 @@ Why did I get an error?
      proceed smoothly.  Please report any bugs you find.
 
 
-File: docnL8qzK.info,  Node: Changelog,  Next: Development,  Prev: FAQ,  Up: Top
+File: docGzRVIJ.info,  Node: Changelog,  Next: Development,  Prev: FAQ,  Up: Top
 
 5 Changelog
 ***********
@@ -421,15 +443,24 @@ File: docnL8qzK.info,  Node: Changelog,  Next: Development,  Prev: FAQ,  Up: Top
 * v0.1: v01.
 
 
-File: docnL8qzK.info,  Node: v08-pre,  Next: v072,  Up: Changelog
+File: docGzRVIJ.info,  Node: v08-pre,  Next: v072,  Up: Changelog
 
 5.1 v0.8-pre
 ============
 
-Nothing new yet.
+*Additions*
+   • New completion interface with rich annotations.  (#83
+     (https://github.com/alphapapa/activity.el/pull/83).  Thanks to JD
+     Smith (https://github.com/jdtsmith).)
+
+   *Changes*
+   • During save, the ‘time’ slot for an activity remains unchanged
+     unless its buffers or files differ from their last saved state.
+     (#83 (https://github.com/alphapapa/activity.el/pull/83).  Thanks to
+     JD Smith (https://github.com/jdtsmith).)
 
 
-File: docnL8qzK.info,  Node: v072,  Next: v071,  Prev: v08-pre,  Up: Changelog
+File: docGzRVIJ.info,  Node: v072,  Next: v071,  Prev: v08-pre,  Up: Changelog
 
 5.2 v0.7.2
 ==========
@@ -441,7 +472,7 @@ File: docnL8qzK.info,  Node: v072,  Next: v071,  Prev: v08-pre,  Up: Changelog
      (https://github.com/stardiviner) for reporting.)
 
 
-File: docnL8qzK.info,  Node: v071,  Next: v07,  Prev: v072,  Up: Changelog
+File: docGzRVIJ.info,  Node: v071,  Next: v07,  Prev: v072,  Up: Changelog
 
 5.3 v0.7.1
 ==========
@@ -463,7 +494,7 @@ File: docnL8qzK.info,  Node: v071,  Next: v07,  Prev: v072,  Up: Changelog
      Joseph Turner (https://breatheoutbreathe.in).)
 
 
-File: docnL8qzK.info,  Node: v07,  Next: v06,  Prev: v071,  Up: Changelog
+File: docGzRVIJ.info,  Node: v07,  Next: v06,  Prev: v071,  Up: Changelog
 
 5.4 v0.7
 ========
@@ -487,7 +518,7 @@ File: docnL8qzK.info,  Node: v07,  Next: v06,  Prev: v071,  Up: Changelog
      Jelle Licht (https://github.com/jellelicht).)
 
 
-File: docnL8qzK.info,  Node: v06,  Next: v051,  Prev: v07,  Up: Changelog
+File: docGzRVIJ.info,  Node: v06,  Next: v051,  Prev: v07,  Up: Changelog
 
 5.5 v0.6
 ========
@@ -516,7 +547,7 @@ File: docnL8qzK.info,  Node: v06,  Next: v051,  Prev: v07,  Up: Changelog
      Al M.  (https://github.com/yrns) for reporting.)
 
 
-File: docnL8qzK.info,  Node: v051,  Next: v05,  Prev: v06,  Up: Changelog
+File: docGzRVIJ.info,  Node: v051,  Next: v05,  Prev: v06,  Up: Changelog
 
 5.6 v0.5.1
 ==========
@@ -525,7 +556,7 @@ File: docnL8qzK.info,  Node: v051,  Next: v05,  Prev: v06,  Up: Changelog
    • Listing activities without last-saved states.
 
 
-File: docnL8qzK.info,  Node: v05,  Next: v04,  Prev: v051,  Up: Changelog
+File: docGzRVIJ.info,  Node: v05,  Next: v04,  Prev: v051,  Up: Changelog
 
 5.7 v0.5
 ========
@@ -566,7 +597,7 @@ File: docnL8qzK.info,  Node: v05,  Next: v04,  Prev: v051,  Up: Changelog
      Karthik Chikmagalur (https://github.com/karthink) for reporting.)
 
 
-File: docnL8qzK.info,  Node: v04,  Next: v033,  Prev: v05,  Up: Changelog
+File: docGzRVIJ.info,  Node: v04,  Next: v033,  Prev: v05,  Up: Changelog
 
 5.8 v0.4
 ========
@@ -583,7 +614,7 @@ File: docnL8qzK.info,  Node: v04,  Next: v033,  Prev: v05,  Up: Changelog
      JD Smith (https://github.com/jdtsmith) for reporting.)
 
 
-File: docnL8qzK.info,  Node: v033,  Next: v032,  Prev: v04,  Up: Changelog
+File: docGzRVIJ.info,  Node: v033,  Next: v032,  Prev: v04,  Up: Changelog
 
 5.9 v0.3.3
 ==========
@@ -597,7 +628,7 @@ File: docnL8qzK.info,  Node: v033,  Next: v032,  Prev: v04,  Up: Changelog
      the moment).
 
 
-File: docnL8qzK.info,  Node: v032,  Next: v031,  Prev: v033,  Up: Changelog
+File: docGzRVIJ.info,  Node: v032,  Next: v031,  Prev: v033,  Up: Changelog
 
 5.10 v0.3.2
 ===========
@@ -605,7 +636,7 @@ File: docnL8qzK.info,  Node: v032,  Next: v031,  Prev: v033,  Up: Changelog
 Updated documentation, etc.
 
 
-File: docnL8qzK.info,  Node: v031,  Next: v03,  Prev: v032,  Up: Changelog
+File: docGzRVIJ.info,  Node: v031,  Next: v03,  Prev: v032,  Up: Changelog
 
 5.11 v0.3.1
 ===========
@@ -617,7 +648,7 @@ File: docnL8qzK.info,  Node: v031,  Next: v03,  Prev: v032,  Up: Changelog
      (https://github.com/alphapapa/activities.el/issues/7))
 
 
-File: docnL8qzK.info,  Node: v03,  Next: v02,  Prev: v031,  Up: Changelog
+File: docGzRVIJ.info,  Node: v03,  Next: v02,  Prev: v031,  Up: Changelog
 
 5.12 v0.3
 =========
@@ -630,7 +661,7 @@ File: docnL8qzK.info,  Node: v03,  Next: v02,  Prev: v031,  Up: Changelog
    • Record times at which activities’ states were updated.
 
 
-File: docnL8qzK.info,  Node: v02,  Next: v013,  Prev: v03,  Up: Changelog
+File: docGzRVIJ.info,  Node: v02,  Next: v013,  Prev: v03,  Up: Changelog
 
 5.13 v0.2
 =========
@@ -646,7 +677,7 @@ File: docnL8qzK.info,  Node: v02,  Next: v013,  Prev: v03,  Up: Changelog
      (https://github.com/jdtsmith) for suggesting.)
 
 
-File: docnL8qzK.info,  Node: v013,  Next: v012,  Prev: v02,  Up: Changelog
+File: docGzRVIJ.info,  Node: v013,  Next: v012,  Prev: v02,  Up: Changelog
 
 5.14 v0.1.3
 ===========
@@ -656,7 +687,7 @@ File: docnL8qzK.info,  Node: v013,  Next: v012,  Prev: v02,  Up: Changelog
    • Command aliases.
 
 
-File: docnL8qzK.info,  Node: v012,  Next: v011,  Prev: v013,  Up: Changelog
+File: docGzRVIJ.info,  Node: v012,  Next: v011,  Prev: v013,  Up: Changelog
 
 5.15 v0.1.2
 ===========
@@ -665,7 +696,7 @@ File: docnL8qzK.info,  Node: v012,  Next: v011,  Prev: v013,  Up: Changelog
    • Some single-window configurations were not restored properly.
 
 
-File: docnL8qzK.info,  Node: v011,  Next: v01,  Prev: v012,  Up: Changelog
+File: docGzRVIJ.info,  Node: v011,  Next: v01,  Prev: v012,  Up: Changelog
 
 5.16 v0.1.1
 ===========
@@ -674,7 +705,7 @@ File: docnL8qzK.info,  Node: v011,  Next: v01,  Prev: v012,  Up: Changelog
    • Silence message about non-file-visiting buffers.
 
 
-File: docnL8qzK.info,  Node: v01,  Prev: v011,  Up: Changelog
+File: docGzRVIJ.info,  Node: v01,  Prev: v011,  Up: Changelog
 
 5.17 v0.1
 =========
@@ -682,7 +713,7 @@ File: docnL8qzK.info,  Node: v01,  Prev: v011,  Up: Changelog
 Initial release.
 
 
-File: docnL8qzK.info,  Node: Development,  Prev: Changelog,  Up: Top
+File: docGzRVIJ.info,  Node: Development,  Prev: Changelog,  Up: Top
 
 6 Development
 *************
@@ -696,7 +727,7 @@ and patches are welcome.
 * Copyright assignment::
 
 
-File: docnL8qzK.info,  Node: Copyright assignment,  Up: Development
+File: docGzRVIJ.info,  Node: Copyright assignment,  Up: Development
 
 6.1 Copyright assignment
 ========================
@@ -713,39 +744,40 @@ to request the assignment form.
 
 Tag Table:
 Node: Top238
-Node: Installation3162
-Node: GNU ELPA3316
-Node: Quelpa3684
-Node: Configuration4407
-Node: Usage5271
-Node: Activities5476
-Node: Compatibility6467
-Node: Modes6954
-Node: Workflow7625
-Node: Bindings8591
-Node: Commands9231
-Node: Bookmarks11049
-Node: FAQ11404
-Node: Changelog14518
-Node: v08-pre14893
-Node: v07215007
-Node: v07115382
-Node: v0716260
-Node: v0617152
-Node: v05118400
-Node: v0518562
-Node: v0420542
-Node: v03321086
-Node: v03221519
-Node: v03121652
-Node: v0321987
-Node: v0222382
-Node: v01322879
-Node: v01223033
-Node: v01123215
-Node: v0123383
-Node: Development23487
-Node: Copyright assignment23762
+Node: Installation3177
+Node: GNU ELPA3331
+Node: Quelpa3699
+Node: Configuration4422
+Node: Usage5286
+Node: Activities5506
+Node: Compatibility6497
+Node: Modes6984
+Node: Workflow7655
+Node: Bindings8621
+Node: Commands9261
+Node: Bookmarks11079
+Node: Completion11453
+Node: FAQ12133
+Node: Changelog15247
+Node: v08-pre15622
+Node: v07216182
+Node: v07116557
+Node: v0717435
+Node: v0618327
+Node: v05119575
+Node: v0519737
+Node: v0421717
+Node: v03322261
+Node: v03222694
+Node: v03122827
+Node: v0323162
+Node: v0223557
+Node: v01324054
+Node: v01224208
+Node: v01124390
+Node: v0124558
+Node: Development24662
+Node: Copyright assignment24937
 
 End Tag Table
 
