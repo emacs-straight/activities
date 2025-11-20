@@ -356,6 +356,10 @@ activity.
   ⁃ Don't try to compute true filenames for remote files.  (See [#130],
     [#133].  Thanks to [JD Smith].)
 
+  *Compatibility*
+  ⁃ Required Emacs version reduced to 28.2.  ([#153].  Thanks to [Robert
+    Weiner].)
+
 
 [#83] <https://github.com/alphapapa/activity.el/pull/83>
 
@@ -364,6 +368,10 @@ activity.
 [#130] <https://github.com/alphapapa/activities.el/issues/130>
 
 [#133] <https://github.com/alphapapa/activities.el/pull/133>
+
+[#153] <https://github.com/alphapapa/activities.el/issues/153>
+
+[Robert Weiner] <https://github.com/rswgnu>
 
 
 5.2 v0.7.2
