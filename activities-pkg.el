@@ -1,2 +1,2 @@
-;; Generated package description from activities.el  -*- mode: lisp-data; no-byte-compile: t -*-
-(define-package "activities" "0.8pre0.20251118.222434" "Save/restore sets of windows, tabs/frames, and their buffers" '((emacs "28.2") (persist "0.6")) :commit "5025962126d140a7e26d36c3a2750bf4ff0bfd45" :authors '(("Adam Porter" . "adam@alphapapa.net")) :maintainer '("Adam Porter" . "adam@alphapapa.net") :keywords '("convenience") :url "https://github.com/alphapapa/activities.el")
+;; Generated package description from activities.el  -*- mode: lisp-data; no-byte-compile: t; lexical-binding:t -*-
+(define-package "activities" "0.80.20251118.222434" "Save/restore sets of windows, tabs/frames, and their buffers" '((emacs "28.2") (persist "0.6")) :commit "5025962126d140a7e26d36c3a2750bf4ff0bfd45" :authors '(("Adam Porter" . "adam@alphapapa.net")) :maintainer '("Adam Porter" . "adam@alphapapa.net") :keywords '("convenience") :url "https://github.com/alphapapa/activities.el")

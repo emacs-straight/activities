@@ -1,4 +1,4 @@
-This is docRsNNhv.info, produced by makeinfo version 6.8 from
+This is activities.info, produced by makeinfo version 7.1.1 from
 activities.texi.
 
 INFO-DIR-SECTION Emacs
@@ -7,7 +7,7 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: docRsNNhv.info,  Node: Top,  Next: Installation,  Up: (dir)
+File: activities.info,  Node: Top,  Next: Installation,  Up: (dir)
 
 activities.el
 *************
@@ -15,16 +15,16 @@ activities.el
 file:https://elpa.gnu.org/packages/activities.svg
 (https://elpa.gnu.org/packages/activities.html)
 
-   Inspired by Genera’s and KDE’s concepts of "activities", this Emacs
+   Inspired by Genera's and KDE's concepts of "activities", this Emacs
 library allows the user to manage frames/tabs, windows, and buffers
 according to their purpose.  An "activity" comprises a frame or tab, its
-window configuration, and the buffers displayed in them–its "state";
+window configuration, and the buffers displayed in them-its "state";
 this state would be related to a certain task the user performs at
 various times, such as developing a certain software project, reading
-and writing email, working with one’s Org mode system, etc.
+and writing email, working with one's Org mode system, etc.
 
-   "Suspending" an activity saves the activity’s state and closes its
-frame/tab; the user would do this when finished with the activity’s task
+   "Suspending" an activity saves the activity's state and closes its
+frame/tab; the user would do this when finished with the activity's task
 for the time being.  "Resuming" the activity restores its buffers and
 windows to its frame/tab; the user would do this when ready to resume
 the task at a later time.  This saves the user from having to manually
@@ -38,14 +38,14 @@ left off, while also allowing it to be reverted to the default state,
 providing a consistent entry point into the activity.
 
    Internally, the Emacs ‘bookmark’ library is used to save and restore
-buffers’ states–that is, any major mode that supports the bookmark
+buffers' states-that is, any major mode that supports the bookmark
 system is compatible.  A buffer whose major mode does not support the
 bookmark system (or does not support it well enough to restore useful
-state) is not compatible and can’t be fully restored, or perhaps not at
+state) is not compatible and can't be fully restored, or perhaps not at
 all; but solving that is as simple as implementing bookmark support for
 the mode, which is often trivial.
 
-   Various hooks are (or will be–feedback is welcome) provided, both
+   Various hooks are (or will be-feedback is welcome) provided, both
 globally and per-activity, so that the user can define functions to be
 called when an activity is saved, restored, or switched from/to.  For
 example, this could be used to limit the set of buffers offered for
@@ -61,7 +61,7 @@ activity.
 * Changelog::
 * Development::
 
-— The Detailed Node Listing —
+-- The Detailed Node Listing --
 
 Installation
 
@@ -105,7 +105,7 @@ Development
 
 
 
-File: docRsNNhv.info,  Node: Installation,  Next: Configuration,  Prev: Top,  Up: Top
+File: activities.info,  Node: Installation,  Next: Configuration,  Prev: Top,  Up: Top
 
 1 Installation
 **************
@@ -116,7 +116,7 @@ File: docRsNNhv.info,  Node: Installation,  Next: Configuration,  Prev: Top,  Up
 * Quelpa::
 
 
-File: docRsNNhv.info,  Node: GNU ELPA,  Next: Quelpa,  Up: Installation
+File: activities.info,  Node: GNU ELPA,  Next: Quelpa,  Up: Installation
 
 1.1 GNU ELPA
 ============
@@ -127,12 +127,12 @@ command ‘M-x package-install RET activities RET’.  This will install the
 latest stable release, which is recommended.
 
 
-File: docRsNNhv.info,  Node: Quelpa,  Prev: GNU ELPA,  Up: Installation
+File: activities.info,  Node: Quelpa,  Prev: GNU ELPA,  Up: Installation
 
 1.2 Quelpa
 ==========
 
-To install directly from git (e.g.  to test a pre-release version), it’s
+To install directly from git (e.g.  to test a pre-release version), it's
 recommended to use Quelpa (https://framagit.org/steckerhalter/quelpa):
 
   1. Install quelpa-use-package
@@ -145,16 +145,16 @@ recommended to use Quelpa (https://framagit.org/steckerhalter/quelpa):
        :quelpa (activities :fetcher github :repo "alphapapa/activities.el"))
 
    If you choose to install it otherwise, please note that the author
-can’t offer help with manual installation problems.
+can't offer help with manual installation problems.
 
 
-File: docRsNNhv.info,  Node: Configuration,  Next: Usage,  Prev: Installation,  Up: Top
+File: activities.info,  Node: Configuration,  Next: Usage,  Prev: Installation,  Up: Top
 
 2 Configuration
 ***************
 
 This is the recommended configuration, in terms of a ‘use-package’ form
-to be placed in the user’s init file:
+to be placed in the user's init file:
 
      (use-package activities
        :init
@@ -175,7 +175,7 @@ to be placed in the user’s init file:
         ("C-x C-a l" . activities-list)))
 
 
-File: docRsNNhv.info,  Node: Usage,  Next: FAQ,  Prev: Configuration,  Up: Top
+File: activities.info,  Node: Usage,  Next: FAQ,  Prev: Configuration,  Up: Top
 
 3 Usage
 *******
@@ -192,7 +192,7 @@ File: docRsNNhv.info,  Node: Usage,  Next: FAQ,  Prev: Configuration,  Up: Top
 * Completion::
 
 
-File: docRsNNhv.info,  Node: Activities,  Next: Compatibility,  Up: Usage
+File: activities.info,  Node: Activities,  Next: Compatibility,  Up: Usage
 
 3.1 Activities
 ==============
@@ -202,19 +202,19 @@ configuration and its associated buffers.  When an activity is
 "resumed," its buffers are recreated and loaded into the window
 configuration, which is loaded into a frame or tab.
 
-   From the user’s perspective, an "activity" should be thought of as
+   From the user's perspective, an "activity" should be thought of as
 something like, "reading my email," "working on my Emacs library,"
 "writing my book," "working for this client," etc.  The user arranges a
-set of windows and buffers according to what’s needed, then saves it as
+set of windows and buffers according to what's needed, then saves it as
 a new activity.  Later, when the user wants to return to doing that
-activity, the activity is "resumed," which restores the activity’s
+activity, the activity is "resumed," which restores the activity's
 last-seen state, allowing the user to pick up where the activity was
 left off; but the user may also revert the activity to its default
 state, which may be used as a kind of entry point to doing the activity
 in general.
 
 
-File: docRsNNhv.info,  Node: Compatibility,  Next: Modes,  Prev: Activities,  Up: Usage
+File: activities.info,  Node: Compatibility,  Next: Modes,  Prev: Activities,  Up: Usage
 
 3.2 Compatibility
 =================
@@ -227,13 +227,13 @@ existing tab commands, regardless of whether it is associated with an
 activity.
 
 
-File: docRsNNhv.info,  Node: Modes,  Next: Workflow,  Prev: Compatibility,  Up: Usage
+File: activities.info,  Node: Modes,  Next: Workflow,  Prev: Compatibility,  Up: Usage
 
 3.3 Modes
 =========
 
 ‘activities-mode’
-     Automatically saves activities’ states when Emacs is idle and when
+     Automatically saves activities' states when Emacs is idle and when
      Emacs exits.  Should be enabled while using this package (otherwise
      you would have to manually call ‘activities-save-all’, which would
      defeat much of the purpose of this library).
@@ -244,14 +244,14 @@ File: docRsNNhv.info,  Node: Modes,  Next: Workflow,  Prev: Compatibility,  Up: 
      please report them._)
 
 
-File: docRsNNhv.info,  Node: Workflow,  Next: Bindings,  Prev: Modes,  Up: Usage
+File: activities.info,  Node: Workflow,  Next: Bindings,  Prev: Modes,  Up: Usage
 
 3.4 Workflow
 ============
 
 An example of a workflow using activities:
 
-  1. Arrange windows in a tab according to an activity you’re
+  1. Arrange windows in a tab according to an activity you're
      performing.
   2. Call ‘activities-define’ (‘C-x C-a C-d’) to save the activity under
      a name.
@@ -264,12 +264,12 @@ An example of a workflow using activities:
      (‘C-x C-a g’).
   7. Rearrange windows and buffers.
   8. Call ‘activities-define’ with a universal prefix argument (‘C-u C-x
-     C-a C-d’) to redefine an activity’s default state.
+     C-a C-d’) to redefine an activity's default state.
   9. Suspend the activity with ‘activities-suspend’ (‘C-x C-a s’) (which
      saves its last state and closes its frame/tab).
 
 
-File: docRsNNhv.info,  Node: Bindings,  Next: Commands,  Prev: Workflow,  Up: Usage
+File: activities.info,  Node: Bindings,  Next: Commands,  Prev: Workflow,  Up: Usage
 
 3.5 Bindings
 ============
@@ -286,7 +286,7 @@ philosophy behind them:
      activities.)
 
 
-File: docRsNNhv.info,  Node: Commands,  Next: Bookmarks,  Prev: Bindings,  Up: Usage
+File: activities.info,  Node: Commands,  Next: Bookmarks,  Prev: Bindings,  Up: Usage
 
 3.6 Commands
 ============
@@ -300,14 +300,14 @@ _With the recommended bindings:_
      Switch to a new, empty activity (i.e.  one showing a new
      frame/tab).
 ‘activities-define’ (‘C-x C-a C-d’)
-     Define a new activity whose default state is the current frame’s or
-     tab’s window configuration.  With prefix argument, redefine an
+     Define a new activity whose default state is the current frame's or
+     tab's window configuration.  With prefix argument, redefine an
      existing activity (thereby updating its default state to the
      current state).
 ‘activities-suspend’ (‘C-x C-a C-s’)
-     Save an activity’s state and close its frame or tab.
+     Save an activity's state and close its frame or tab.
 ‘activities-kill’ (‘C-x C-a C-k’)
-     Discard an activity’s last state (so when it is resumed, its
+     Discard an activity's last state (so when it is resumed, its
      default state will be used), and close its frame or tab.
 ‘activities-resume’ (‘C-x C-a C-a’)
      Resume an activity, switching to a new frame or tab for its window
@@ -325,11 +325,11 @@ _With the recommended bindings:_
 ‘activities-discard’
      Discard an activity permanently.
 ‘activities-save-all’
-     Save all active activities’ states.  (‘activities-mode’ does this
+     Save all active activities' states.  (‘activities-mode’ does this
      automatically, so this command should rarely be needed.)
 
 
-File: docRsNNhv.info,  Node: Bookmarks,  Next: Completion,  Prev: Commands,  Up: Usage
+File: activities.info,  Node: Bookmarks,  Next: Completion,  Prev: Commands,  Up: Usage
 
 3.7 Bookmarks
 =============
@@ -340,7 +340,7 @@ stored when a new activity is made.  This allows the command
 universalize the bookmark system).
 
 
-File: docRsNNhv.info,  Node: Completion,  Prev: Bookmarks,  Up: Usage
+File: activities.info,  Node: Completion,  Prev: Bookmarks,  Up: Usage
 
 3.8 Completion
 ==============
@@ -353,14 +353,14 @@ alongside the activity name:
    • The number of buffers and files the activity contains,
    • A color-coded age (elapsed time since the activity was last
      updated), and
-   • A final ‘*’ if the activity’s list of buffers and files has been
+   • A final ‘*’ if the activity's list of buffers and files has been
      modified from its default state.
 
    The sort order when completing activities can be configured using
 ‘activities-sort-by’.
 
 
-File: docRsNNhv.info,  Node: FAQ,  Next: Changelog,  Prev: Usage,  Up: Top
+File: activities.info,  Node: FAQ,  Next: Changelog,  Prev: Usage,  Up: Top
 
 4 FAQ
 *****
@@ -368,7 +368,7 @@ File: docRsNNhv.info,  Node: FAQ,  Next: Changelog,  Prev: Usage,  Up: Top
 How is this different from Burly.el (https://github.com/alphapapa/burly.el) or Bufler.el (https://github.com/alphapapa/bufler.el/)?
      Burly is a well-polished tool for restoring window and frame
      configurations, which could be considered an incubator for some of
-     the ideas furthered here.  Bufler’s ‘bufler-workspace’ library uses
+     the ideas furthered here.  Bufler's ‘bufler-workspace’ library uses
      Burly to provide some similar functionality, which is at an
      exploratory stage.  ‘activities’ hopes to provide a longer-term
      solution more suitable for integration into Emacs.
@@ -379,10 +379,10 @@ How does this differ from "workspace" packages?
      seem to offer the ability to restore one across Emacs sessions,
      including non-file-backed buffers.  As mentioned, ‘activities’ is
      intended to be more refined and easier to use (e.g.  automatically
-     saving activities’ states when ‘activities-mode’ is enabled).
+     saving activities' states when ‘activities-mode’ is enabled).
      Comparisons to other packages are left to the reader; suffice to
      say that ‘activities’ is intended to provide what other tools
-     haven’t, in an idiomatic, intuitive way.  (Feedback is welcome.)
+     haven't, in an idiomatic, intuitive way.  (Feedback is welcome.)
 
 How does this differ from the built-in ‘desktop-mode’?
      As best this author can tell, ‘desktop-mode’ saves and restores one
@@ -392,32 +392,32 @@ How does this differ from the built-in ‘desktop-mode’?
      be used on-demand to switch between sets of buffers, windows, or
      frames (i.e.  "activities").
 
-"Activities" haven’t seemed to pan out for KDE. Why would they in Emacs?
-     KDE Plasma’s Activities system requires applications that can save
+"Activities" haven't seemed to pan out for KDE. Why would they in Emacs?
+     KDE Plasma's Activities system requires applications that can save
      and restore their state through Plasma, which only (or mostly
      only?)  KDE apps can do, limiting the usefulness of the system.
      However, Emacs offers a coherent environment, similar to Lisp
      machines of yore, and its ‘bookmark’ library offers a way for any
-     buffer’s major mode to save and restore state, if implemented
+     buffer's major mode to save and restore state, if implemented
      (which many already are).
 
 Why did a buffer not restore correctly?
-     Most likely because that buffer’s major mode does not support Emacs
+     Most likely because that buffer's major mode does not support Emacs
      bookmarks (which ‘activities’ uses internally to save and restore
      buffer state).  But many, if not most, major modes do; and for
-     those that don’t, implementing such support is usually trivial (and
+     those that don't, implementing such support is usually trivial (and
      thereby benefits Emacs as a whole, not just ‘activities’).  So
-     contact the major mode’s maintainer and ask that ‘bookmark’ support
+     contact the major mode's maintainer and ask that ‘bookmark’ support
      be implemented.
 
 Why did I get an error?
      Because ‘activities’ is at an early stage of development and some
-     of these features are not simple to implement.  But it’s based on
+     of these features are not simple to implement.  But it's based on
      Burly, which has already been through much bug-fixing, so it should
      proceed smoothly.  Please report any bugs you find.
 
 
-File: docRsNNhv.info,  Node: Changelog,  Next: Development,  Prev: FAQ,  Up: Top
+File: activities.info,  Node: Changelog,  Next: Development,  Prev: FAQ,  Up: Top
 
 5 Changelog
 ***********
@@ -443,7 +443,7 @@ File: docRsNNhv.info,  Node: Changelog,  Next: Development,  Prev: FAQ,  Up: Top
 * v0.1: v01.
 
 
-File: docRsNNhv.info,  Node: v08-pre,  Next: v072,  Up: Changelog
+File: activities.info,  Node: v08-pre,  Next: v072,  Up: Changelog
 
 5.1 v0.8-pre
 ============
@@ -460,7 +460,7 @@ File: docRsNNhv.info,  Node: v08-pre,  Next: v072,  Up: Changelog
      JD Smith (https://github.com/jdtsmith).)
 
    *Fixes*
-   • Don’t try to compute true filenames for remote files.  (See #130
+   • Don't try to compute true filenames for remote files.  (See #130
      (https://github.com/alphapapa/activities.el/issues/130), #133
      (https://github.com/alphapapa/activities.el/pull/133).  Thanks to
      JD Smith (https://github.com/jdtsmith).)
@@ -471,7 +471,7 @@ File: docRsNNhv.info,  Node: v08-pre,  Next: v072,  Up: Changelog
      Robert Weiner (https://github.com/rswgnu).)
 
 
-File: docRsNNhv.info,  Node: v072,  Next: v071,  Prev: v08-pre,  Up: Changelog
+File: activities.info,  Node: v072,  Next: v071,  Prev: v08-pre,  Up: Changelog
 
 5.2 v0.7.2
 ==========
@@ -483,7 +483,7 @@ File: docRsNNhv.info,  Node: v072,  Next: v071,  Prev: v08-pre,  Up: Changelog
      (https://github.com/stardiviner) for reporting.)
 
 
-File: docRsNNhv.info,  Node: v071,  Next: v07,  Prev: v072,  Up: Changelog
+File: activities.info,  Node: v071,  Next: v07,  Prev: v072,  Up: Changelog
 
 5.3 v0.7.1
 ==========
@@ -505,7 +505,7 @@ File: docRsNNhv.info,  Node: v071,  Next: v07,  Prev: v072,  Up: Changelog
      Joseph Turner (https://breatheoutbreathe.in).)
 
 
-File: docRsNNhv.info,  Node: v07,  Next: v06,  Prev: v071,  Up: Changelog
+File: activities.info,  Node: v07,  Next: v06,  Prev: v071,  Up: Changelog
 
 5.4 v0.7
 ========
@@ -518,7 +518,7 @@ File: docRsNNhv.info,  Node: v07,  Next: v06,  Prev: v071,  Up: Changelog
    • Command ‘activities-new’ renamed to ‘activities-define’, with new
      binding ‘C-x C-a C-d’.  (See #46
      (https://github.com/alphapapa/activities.el/issues/46).)
-   • Improve error message when jumping to a buffer’s bookmark signals
+   • Improve error message when jumping to a buffer's bookmark signals
      an error.
 
    *Fixes*
@@ -529,7 +529,7 @@ File: docRsNNhv.info,  Node: v07,  Next: v06,  Prev: v071,  Up: Changelog
      Jelle Licht (https://github.com/jellelicht).)
 
 
-File: docRsNNhv.info,  Node: v06,  Next: v051,  Prev: v07,  Up: Changelog
+File: activities.info,  Node: v06,  Next: v051,  Prev: v07,  Up: Changelog
 
 5.5 v0.6
 ========
@@ -552,13 +552,13 @@ File: docRsNNhv.info,  Node: v06,  Next: v051,  Prev: v07,  Up: Changelog
 
    *Changes*
    • Default time format in activities list.
-   • When saving all activities, don’t persist to disk for each
+   • When saving all activities, don't persist to disk for each
      activity.  (#34
      (https://github.com/alphapapa/activities.el/issues/34).  Thanks to
      Al M.  (https://github.com/yrns) for reporting.)
 
 
-File: docRsNNhv.info,  Node: v051,  Next: v05,  Prev: v06,  Up: Changelog
+File: activities.info,  Node: v051,  Next: v05,  Prev: v06,  Up: Changelog
 
 5.6 v0.5.1
 ==========
@@ -567,7 +567,7 @@ File: docRsNNhv.info,  Node: v051,  Next: v05,  Prev: v06,  Up: Changelog
    • Listing activities without last-saved states.
 
 
-File: docRsNNhv.info,  Node: v05,  Next: v04,  Prev: v051,  Up: Changelog
+File: activities.info,  Node: v05,  Next: v04,  Prev: v051,  Up: Changelog
 
 5.7 v0.5
 ========
@@ -576,7 +576,7 @@ File: docRsNNhv.info,  Node: v05,  Next: v04,  Prev: v051,  Up: Changelog
    • Suggest setting variable ‘edebug-inhibit-emacs-lisp-mode-bindings’
      to avoid conflicts with suggested keybindings.
    • Option ‘activities-bookmark-warnings’ enables warning messages when
-     a non-file-visiting buffer can’t be bookmarked (for debugging
+     a non-file-visiting buffer can't be bookmarked (for debugging
      purposes).
    • Option ‘activities-resume-into-frame’ controls whether resuming an
      activity opens a new frame or uses the current one (when
@@ -585,7 +585,7 @@ File: docRsNNhv.info,  Node: v05,  Next: v04,  Prev: v051,  Up: Changelog
      Icy-Thought (https://github.com/Icy-Thought) for suggesting.)
 
    *Changes*
-   • Command ‘activities-kill’ now discards an activity’s last state
+   • Command ‘activities-kill’ now discards an activity's last state
      (while ‘activities-suspend’ saves its last state), and closes its
      frame or tab.
    • Face ‘activities-tabs-face’ is renamed to ‘activities-tabs’, and
@@ -595,20 +595,20 @@ File: docRsNNhv.info,  Node: v05,  Next: v04,  Prev: v051,  Up: Changelog
      Karthik Chikmagalur (https://github.com/karthink) for suggesting.)
 
    *Fixes*
-   • Show a helpful error if a bookmark’s target file is missing.  (#17
+   • Show a helpful error if a bookmark's target file is missing.  (#17
      (https://github.com/alphapapa/activities.el/issues/17).  Thanks to
      JD Smith (https://github.com/jdtsmith) for reporting.)
    • Sort order in ‘activities-list’.
-   • When discarding an inactive activity, don’t switch to it first.
+   • When discarding an inactive activity, don't switch to it first.
      (#18 (https://github.com/alphapapa/activity.el/issues/18).  Thanks
      to JD Smith (https://github.com/jdtsmith) for reporting.)
-   • Don’t signal an error when ‘debug-on-error’ is enabled and a buffer
+   • Don't signal an error when ‘debug-on-error’ is enabled and a buffer
      is not visiting a file.  (#25
      (https://github.com/alphapapa/activity.el/issues/25).  Thanks to
      Karthik Chikmagalur (https://github.com/karthink) for reporting.)
 
 
-File: docRsNNhv.info,  Node: v04,  Next: v033,  Prev: v05,  Up: Changelog
+File: activities.info,  Node: v04,  Next: v033,  Prev: v05,  Up: Changelog
 
 5.8 v0.4
 ========
@@ -618,14 +618,14 @@ File: docRsNNhv.info,  Node: v04,  Next: v033,  Prev: v05,  Up: Changelog
      states at inappropriate times.
 
    *Fixes*
-   • Don’t save activity state if a minibuffer is active.
+   • Don't save activity state if a minibuffer is active.
    • Offer only active activities for suspending.
-   • Don’t raise frame when saving activity states.  (See #4
+   • Don't raise frame when saving activity states.  (See #4
      (https://github.com/alphapapa/activities.el/issues/4).  Thanks to
      JD Smith (https://github.com/jdtsmith) for reporting.)
 
 
-File: docRsNNhv.info,  Node: v033,  Next: v032,  Prev: v04,  Up: Changelog
+File: activities.info,  Node: v033,  Next: v032,  Prev: v04,  Up: Changelog
 
 5.9 v0.3.3
 ==========
@@ -639,7 +639,7 @@ File: docRsNNhv.info,  Node: v033,  Next: v032,  Prev: v04,  Up: Changelog
      the moment).
 
 
-File: docRsNNhv.info,  Node: v032,  Next: v031,  Prev: v033,  Up: Changelog
+File: activities.info,  Node: v032,  Next: v031,  Prev: v033,  Up: Changelog
 
 5.10 v0.3.2
 ===========
@@ -647,7 +647,7 @@ File: docRsNNhv.info,  Node: v032,  Next: v031,  Prev: v033,  Up: Changelog
 Updated documentation, etc.
 
 
-File: docRsNNhv.info,  Node: v031,  Next: v03,  Prev: v032,  Up: Changelog
+File: activities.info,  Node: v031,  Next: v03,  Prev: v032,  Up: Changelog
 
 5.11 v0.3.1
 ===========
@@ -659,7 +659,7 @@ File: docRsNNhv.info,  Node: v031,  Next: v03,  Prev: v032,  Up: Changelog
      (https://github.com/alphapapa/activities.el/issues/7))
 
 
-File: docRsNNhv.info,  Node: v03,  Next: v02,  Prev: v031,  Up: Changelog
+File: activities.info,  Node: v03,  Next: v02,  Prev: v031,  Up: Changelog
 
 5.12 v0.3
 =========
@@ -669,10 +669,10 @@ File: docRsNNhv.info,  Node: v03,  Next: v02,  Prev: v031,  Up: Changelog
      which they can be managed.
    • Offer current activity name by default when redefining an activity
      with ‘activities-new’.
-   • Record times at which activities’ states were updated.
+   • Record times at which activities' states were updated.
 
 
-File: docRsNNhv.info,  Node: v02,  Next: v013,  Prev: v03,  Up: Changelog
+File: activities.info,  Node: v02,  Next: v013,  Prev: v03,  Up: Changelog
 
 5.13 v0.2
 =========
@@ -688,7 +688,7 @@ File: docRsNNhv.info,  Node: v02,  Next: v013,  Prev: v03,  Up: Changelog
      (https://github.com/jdtsmith) for suggesting.)
 
 
-File: docRsNNhv.info,  Node: v013,  Next: v012,  Prev: v02,  Up: Changelog
+File: activities.info,  Node: v013,  Next: v012,  Prev: v02,  Up: Changelog
 
 5.14 v0.1.3
 ===========
@@ -698,7 +698,7 @@ File: docRsNNhv.info,  Node: v013,  Next: v012,  Prev: v02,  Up: Changelog
    • Command aliases.
 
 
-File: docRsNNhv.info,  Node: v012,  Next: v011,  Prev: v013,  Up: Changelog
+File: activities.info,  Node: v012,  Next: v011,  Prev: v013,  Up: Changelog
 
 5.15 v0.1.2
 ===========
@@ -707,7 +707,7 @@ File: docRsNNhv.info,  Node: v012,  Next: v011,  Prev: v013,  Up: Changelog
    • Some single-window configurations were not restored properly.
 
 
-File: docRsNNhv.info,  Node: v011,  Next: v01,  Prev: v012,  Up: Changelog
+File: activities.info,  Node: v011,  Next: v01,  Prev: v012,  Up: Changelog
 
 5.16 v0.1.1
 ===========
@@ -716,7 +716,7 @@ File: docRsNNhv.info,  Node: v011,  Next: v01,  Prev: v012,  Up: Changelog
    • Silence message about non-file-visiting buffers.
 
 
-File: docRsNNhv.info,  Node: v01,  Prev: v011,  Up: Changelog
+File: activities.info,  Node: v01,  Prev: v011,  Up: Changelog
 
 5.17 v0.1
 =========
@@ -724,7 +724,7 @@ File: docRsNNhv.info,  Node: v01,  Prev: v011,  Up: Changelog
 Initial release.
 
 
-File: docRsNNhv.info,  Node: Development,  Prev: Changelog,  Up: Top
+File: activities.info,  Node: Development,  Prev: Changelog,  Up: Top
 
 6 Development
 *************
@@ -738,7 +738,7 @@ and patches are welcome.
 * Copyright assignment::
 
 
-File: docRsNNhv.info,  Node: Copyright assignment,  Up: Development
+File: activities.info,  Node: Copyright assignment,  Up: Development
 
 6.1 Copyright assignment
 ========================
@@ -748,47 +748,47 @@ being distributed in GNU ELPA (https://elpa.gnu.org/).  Contributions to
 this project must follow GNU guidelines, which means that, as with other
 parts of Emacs, patches of more than a few lines must be accompanied by
 having assigned copyright for the contribution to the FSF.  Contributors
-who wish to do so may contact emacs-devel@gnu.org <emacs-devel@gnu.org>
-to request the assignment form.
+who wish to do so may contact emacs-devel@gnu.org
+<mailto:emacs-devel@gnu.org> to request the assignment form.
 
 
 
 Tag Table:
-Node: Top238
-Node: Installation3177
-Node: GNU ELPA3331
-Node: Quelpa3699
-Node: Configuration4422
-Node: Usage5286
-Node: Activities5506
-Node: Compatibility6497
-Node: Modes6984
-Node: Workflow7655
-Node: Bindings8621
-Node: Commands9261
-Node: Bookmarks11079
-Node: Completion11453
-Node: FAQ12133
-Node: Changelog15247
-Node: v08-pre15622
-Node: v07216648
-Node: v07117023
-Node: v0717901
-Node: v0618793
-Node: v05120041
-Node: v0520203
-Node: v0422183
-Node: v03322727
-Node: v03223160
-Node: v03123293
-Node: v0323628
-Node: v0224023
-Node: v01324520
-Node: v01224674
-Node: v01124856
-Node: v0125024
-Node: Development25128
-Node: Copyright assignment25403
+Node: Top241
+Node: Installation3159
+Node: GNU ELPA3314
+Node: Quelpa3683
+Node: Configuration4403
+Node: Usage5266
+Node: Activities5487
+Node: Compatibility6473
+Node: Modes6961
+Node: Workflow7631
+Node: Bindings8594
+Node: Commands9235
+Node: Bookmarks11044
+Node: Completion11419
+Node: FAQ12098
+Node: Changelog15193
+Node: v08-pre15569
+Node: v07216594
+Node: v07116970
+Node: v0717849
+Node: v0618740
+Node: v05119987
+Node: v0520150
+Node: v0422121
+Node: v03322662
+Node: v03223096
+Node: v03123230
+Node: v0323566
+Node: v0223960
+Node: v01324458
+Node: v01224613
+Node: v01124796
+Node: v0124965
+Node: Development25070
+Node: Copyright assignment25346
 
 End Tag Table
 
